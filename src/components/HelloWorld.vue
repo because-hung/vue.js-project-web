@@ -9,7 +9,6 @@ export default {
   name: "HelloWorld",
   methods: {
     signout() {
-
       const api = `${process.env.VUE_APP_APIPATH}/logout`;
       const vm = this;
       this.$http.post(api).then(response => {
@@ -19,9 +18,8 @@ export default {
         }
       });
     }
-    },
-  };
-
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

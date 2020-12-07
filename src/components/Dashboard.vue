@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Navbar/>
-    <Alert/>
+    <Navbar />
+    <Alert />
     <div class="container-fluid">
       <div class="row">
         <Sidebar></Sidebar>

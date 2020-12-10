@@ -9,7 +9,8 @@ import Orders from "@/components/pages/Orders";
 import CustomerOrders from "@/components/pages/CustomerOrders";
 import CustomerCheckout from "@/components/pages/CustomerCheckout";
 import Layout from "@/components/pages/views/Layout";
-
+import Index from "@/components/pages/views/Index";
+import Cart from "@/components/pages/Cart";
 
 Vue.use(VueRouter);
 
@@ -38,7 +39,12 @@ const routes = [
     name: "Login",
     component: Login
   },
- 
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart
+  },
+
   {
     path: "/admin",
     name: "Dashboard",
@@ -69,7 +75,11 @@ const routes = [
     name: "Layout",
     component: Layout
   },
-
+  {
+    path: "/index",
+    name: "Index",
+    component: Index
+  },
 
   {
     path: "/",

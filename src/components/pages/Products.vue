@@ -398,7 +398,6 @@ export default {
   },
   created() {
     this.getProducts();
-    //  this.$bus.$emit('messsage:push','這是一段訊息','success');
   }
 };
 </script>

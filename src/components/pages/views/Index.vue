@@ -6,9 +6,7 @@
     </div>
 
     <!--middle-->
-    <div>
-      <ProductList></ProductList>
-    </div>
+
     <!--footer-->
     <div>
       <Footer />
@@ -19,14 +17,13 @@
 <script>
 import Header from "./Header";
 import Footer from "./Footer";
-import ProductList from "./ProductList";
+
 export default {
   data() {
     return {};
   },
   components: {
     Footer,
-    ProductList,
     Header
   }
 };

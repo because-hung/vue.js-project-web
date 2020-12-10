@@ -61,7 +61,7 @@ export default {
           const expired = response.data.expired;
           console.log(token, expired);
           document.cookie = `hexToken=${token};expires=${new Date(expired)};`;
-          vm.$router.push({path:"/admin/products"});
+          vm.$router.push("/admin/products");
         }
       });
     }

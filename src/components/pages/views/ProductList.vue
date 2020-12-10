@@ -190,7 +190,11 @@ export default {
     searchProduct(searchTitle) {
   const vm = this;
   console.log(searchTitle);
-      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
+  if (searchTitle == ""){
+        this.getProductALL();
+  }
+  else{
+    const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
       vm.isLoading = true;
       this.$http.get(url).then(response => {
        const searchProduct = response.data.products.filter(item =>{
@@ -201,6 +205,7 @@ export default {
        vm.productALL = searchProduct;
         vm.isLoading = false;
       });
+  }
     },
     getCategory(currentcategory) {
        const vm = this;

@@ -12,9 +12,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, key) in sortOrder" :key="key"
+        <tr
+          v-for="(item, key) in sortOrder"
+          :key="key"
           v-if="orders.length"
-          :class="{'text-secondary': !item.is_paid}">
+          :class="{ 'text-secondary': !item.is_paid }"
+        >
           <td>{{ item.create_at | date }}</td>
           <td><span v-text="item.user.email" v-if="item.user"></span></td>
           <td>
@@ -39,31 +42,31 @@
 </template>
 
 <script>
-import Pagination from '../Pagination';
+import Pagination from "../Pagination";
 export default {
   data() {
     return {
       orders: {},
       isNew: false,
       pagination: {},
-      isLoading: false,
+      isLoading: false
     };
   },
   components: {
-    Pagination,
+    Pagination
   },
   methods: {
     getOrders(currentPage = 1) {
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/orders?page=${currentPage}`;
       vm.isLoading = true;
-      this.$http.get(url, vm.tempProduct).then((response) => {
+      this.$http.get(url, vm.tempProduct).then(response => {
         vm.orders = response.data.orders;
         vm.pagination = response.data.pagination;
         vm.isLoading = false;
         console.log(response);
       });
-    },
+    }
   },
   computed: {
     sortOrder() {
@@ -77,11 +80,11 @@ export default {
         });
       }
       return newOrder;
-    },
+    }
   },
   created() {
     this.getOrders();
     console.log(process.env.VUE_APP_APIPATH);
-  },
+  }
 };
 </script>

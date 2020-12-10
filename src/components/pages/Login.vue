@@ -28,7 +28,7 @@
 
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me" /> Remember me
+          <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
 
@@ -61,7 +61,7 @@ export default {
           const expired = response.data.expired;
           console.log(token, expired);
           document.cookie = `hexToken=${token};expires=${new Date(expired)};`;
-          vm.$router.push("/admin/products");
+          vm.$router.push({path:"/admin/products"});
         }
       });
     }

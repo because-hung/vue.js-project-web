@@ -20,11 +20,15 @@
               <div class="h5" v-if="!item.price">
                 {{ item.origin_price }} 元
               </div>
-              <del class="h6" v-if="item.price"
+              <del class="h5 font-weight-bold" v-if="item.origin_price > 0"
                 >原價 {{ item.origin_price }} 元</del
               >
-              <div class="h5" v-if="item.price">
-                現在只要 {{ item.price }} 元
+              <div class="h4 ml-auto" v-if="item.origin_price > 0">
+                <span class="badge badge-danger mr-1 py-2">特價 </span>
+                {{ item.price }} 元
+              </div>
+              <div class="h4 ml-auto" v-else="item.price">
+                {{ item.price }} 元
               </div>
             </div>
           </div>
@@ -116,6 +120,9 @@
         </div>
       </div>
     </div>
+
+    <Pagination :pages="pagination" @emitPages="getProducts"></Pagination>
+
     <div class="container">
       <table
         class="table mt-4 mx-auto"
@@ -167,6 +174,7 @@
       <div
         class="input-group mb-5 input-group-sm ml-auto"
         style="width:30%;margin-right:15%;"
+        v-if="cart.total >= 1"
       >
         <input
           type="text"
@@ -231,10 +239,10 @@
             :class="{ 'is-invalid': errors.has('tel') }"
             id="usertel"
             v-model="form.user.tel"
-             v-validate="'required'"
+            v-validate="'required'"
             placeholder="請輸入電話"
           />
-           <span class="text-danger" v-if="errors.has('tel')"
+          <span class="text-danger" v-if="errors.has('tel')"
             >電話欄位不得留空</span
           >
         </div>
@@ -277,11 +285,13 @@
 
 <script>
 import $ from "jquery";
+import Pagination from "../Pagination";
 export default {
   data() {
     return {
       products: [],
       product: {},
+      pagination: {},
       cart: {},
       status: {
         loadingItem: ""
@@ -290,22 +300,27 @@ export default {
       coupon_code: "",
       form: {
         user: {
-          name: '',
-          email: '',
-          tel: '',
-          address: '',
+          name: "",
+          email: "",
+          tel: "",
+          address: ""
         },
-        message: '',
-      },
+        message: ""
+      }
     };
   },
+  components: {
+    Pagination
+  },
   methods: {
-    getProducts() {
+    getProducts(currentPage = 1) {
       const vm = this;
-      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products`;
+      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products?page=${currentPage}`;
+
       vm.isLoading = true;
       this.$http.get(url).then(response => {
         vm.products = response.data.products;
+        vm.pagination = response.data.pagination;
         console.log(response);
         vm.isLoading = false;
       });
@@ -314,6 +329,7 @@ export default {
     getProduct(id) {
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
+
       vm.status.loadingItem = id;
       this.$http.get(url).then(response => {
         vm.product = response.data.product;
@@ -376,21 +392,21 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/order`;
       const order = vm.form;
       // vm.isLoading = true;
-      this.$validator.validate().then((result) => {
+      this.$validator.validate().then(result => {
         if (result) {
-          this.$http.post(url, { data: order }).then((response) => {
-            console.log('訂單已建立', response);
-             if (response.data.success) {
+          this.$http.post(url, { data: order }).then(response => {
+            console.log("訂單已建立", response);
+            if (response.data.success) {
               vm.$router.push(`/customer_checkout/${response.data.orderId}`);
             }
             // vm.getCart();
             // vm.isLoading = false;
           });
         } else {
-          console.log('欄位不完整');
+          console.log("欄位不完整");
         }
       });
-    },
+    }
   },
 
   created() {

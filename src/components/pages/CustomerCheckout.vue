@@ -11,7 +11,9 @@
           <tr v-for="item in order.products" :key="item.id">
             <td class="align-middle">{{ item.product.title }}</td>
             <td class="align-middle">{{ item.qty }}</td>
-            <td class="align-middle text-right">{{ Math.round(item.final_total) }}</td>
+            <td class="align-middle text-right">
+              {{ Math.round(item.final_total) }}
+            </td>
           </tr>
         </tbody>
         <tfoot>
@@ -61,9 +63,9 @@ export default {
   data() {
     return {
       order: {
-        user: {},
+        user: {}
       },
-      orderId: '',
+      orderId: ""
     };
   },
   methods: {
@@ -71,7 +73,7 @@ export default {
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/order/${vm.orderId}`;
       vm.isLoading = true;
-      this.$http.get(url).then((response) => {
+      this.$http.get(url).then(response => {
         vm.order = response.data.order;
         console.log(response);
         vm.isLoading = false;
@@ -81,19 +83,19 @@ export default {
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`;
       vm.isLoading = true;
-      this.$http.post(url).then((response) => {
+      this.$http.post(url).then(response => {
         console.log(response);
         if (response.data.success) {
           vm.getOrder();
         }
         vm.isLoading = false;
       });
-    },
+    }
   },
   created() {
     this.orderId = this.$route.params.orderId;
     this.getOrder();
     console.log(this.orderId);
-  },
+  }
 };
 </script>

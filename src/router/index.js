@@ -5,9 +5,11 @@ import Login from "@/components/pages/Login";
 import Dashboard from "@/components/Dashboard";
 import Products from "@/components/pages/Products";
 import Coupon from "@/components/pages/Coupon";
-import Orders from '@/components/pages/Orders';
+import Orders from "@/components/pages/Orders";
 import CustomerOrders from "@/components/pages/CustomerOrders";
-import CustomerCheckout from '@/components/pages/CustomerCheckout';
+import CustomerCheckout from "@/components/pages/CustomerCheckout";
+import Layout from "@/components/pages/views/Layout";
+
 
 Vue.use(VueRouter);
 
@@ -22,21 +24,21 @@ const routes = [
   //   component: Home,
   //   meta: { requiresAuth: true }
   // },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  },
+  // {
+  //   path: "/about",
+  //   name: "About",
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () =>
+  //     import(/* webpackChunkName: "about" */ "../views/About.vue")
+  // },
   {
     path: "/login",
     name: "Login",
     component: Login
   },
-
+ 
   {
     path: "/admin",
     name: "Dashboard",
@@ -55,16 +57,20 @@ const routes = [
         meta: { requiresAuth: true }
       },
       {
-        path: 'orders',
-        name: 'Orders',
+        path: "orders",
+        name: "Orders",
         component: Orders,
-        meta: { requiresAuth: true },
+        meta: { requiresAuth: true }
       }
-    
     ]
   },
+  {
+    path: "/layout",
+    name: "Layout",
+    component: Layout
+  },
 
-  
+
   {
     path: "/",
     name: "Dashboard",
@@ -76,8 +82,8 @@ const routes = [
         component: CustomerOrders
       },
       {
-        path: 'customer_checkout/:orderId',
-        name: 'CustomerCheckout',
+        path: "customer_checkout/:orderId",
+        name: "CustomerCheckout",
         component: CustomerCheckout
       }
     ]

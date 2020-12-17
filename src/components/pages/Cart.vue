@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!--navbar-->
+ <!--navbar-->
     <nav class="navbar navbar-expand-lg " style="background-color:#dcdcdc;">
         <a class="navbar-brand" href="#"><img src="../../../src/assets/img/logo3.png"  alt=""></a>
         
@@ -29,7 +29,7 @@
             <li class="list-inline-item">
             <router-link to="/login">
              <div class="btn btn-outline-primary rounded-circle">
-            <i class="fas fa-user-circle"></i>
+            <i class="fas fa-user-circle"></i> 會員登入
          </div>
             </router-link>
         
@@ -37,17 +37,18 @@
 
             <router-link to="/cart">
             <li class="list-inline-item">
-              <button class="btn btn-outline-primary rounded-circle btn-cart"
-              data-toggle="dropdown">
-              <i class="fas fa-cart-plus"></i>
-                <div class="badge badge-pill badge-danger"></div>
+              <button class="btn btn-outline-primary rounded-circle btn-cart">
+              <i class="fas fa-cart-plus"></i> 我要結帳
+                
               </button>
               </li>
               </router-link>
 
               </ul>
       </nav>
+<div>
 
+</div>
 
 
 
@@ -55,8 +56,11 @@
 
 <div class="container">
 
-<h1 class="text-center my-4 text-secondary">Slack 結帳</h1>
-    <section class="form-row align-items-center text-center">
+<div class="logo-header mt-5 d-flex justify-content-center ">
+<img src="../../../src/assets/img/logo2.png"  alt="">
+<h1 class=" text-secondary ml-3">Slack 結帳</h1>
+</div>
+    <section class="form-row align-items-center text-center mt-5">
       <div class="col">
         <div class="alert alert-success alert-rounded mb-0" role="alert">
           1.輸入訂單資料
@@ -116,13 +120,15 @@
               </div>
             </td>
             <td class="text-center">{{ item.qty }}</td>
+           
             <td class="text-right">{{ Math.round(item.final_total) }}</td>
           </tr>
+         
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="3">總計</td>
-             <td></td>
+            <td colspan="3">總計 </td>
+             <td class="text-center">{{ Sum }}</td>
             <td class="text-right">{{ cart.total }}</td>
           </tr >
           <tr v-if="cart.final_total !== cart.total" >
@@ -157,7 +163,7 @@
       </div>
     </div>
 
-<div class="col-5 mt-3 shadow">
+<div class="col-5 mt-3  shadow">
 <div class="row">
       <form  class="" @submit.prevent="createOrder" style="width:70%;">
         <div class="form-group" >
@@ -239,8 +245,9 @@
             v-model="form.message"
           ></textarea>
         </div>
-        <div class="text-right">
-          <button class="btn btn-danger">送出訂單</button>
+        <div class="text-right">      
+              <button class="btn btn-danger">送出訂單</button>
+     
         </div>
       </form>
     </div>
@@ -274,11 +281,16 @@
 <script>
 import $ from "jquery";
 import Footer from "./views/Footer";
+import Header from "./views/Header";
 
 export default {
   data() {
+  
     return {
+        props:["cartNumber"] ,
  cart: {},
+ cartLen:"",
+ Sum:0,
       status: {
         loadingItem: ""
       },
@@ -299,27 +311,13 @@ export default {
     }
   },
   components: {
-    Footer,
+    Footer,Header
    
   },
 methods: {
     
 
-    addtoCart(id, qty = 1) {
-      const vm = this;
-      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
-      vm.status.loadingItem = id;
-      const cart = {
-        product_id: id,
-        qty
-      };
-      this.$http.post(url, { data: cart }).then(response => {
-        console.log(response);
-        vm.status.loadingItem = "";
-        vm.getCart();
-        $("#productModal").modal("hide");
-      });
-    },
+    
     getCart() {
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
@@ -327,10 +325,17 @@ methods: {
       this.$http.get(url).then(response => {
         // vm.products = response.data.products;
         vm.cart = response.data.data;
+        vm.cartLen = response.data.data.carts.length;
+        
+        for(var i=0;i<vm.cartLen;i++){
+          vm.Sum +=  response.data.data.carts[i].qty;
+        }
         console.log(response);
+    
         vm.isLoading = false;
       });
     },
+   
     removeCart(id) {
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${id}`;
@@ -364,7 +369,7 @@ methods: {
           this.$http.post(url, { data: order }).then(response => {
             console.log("訂單已建立", response);
             if (response.data.success) {
-              vm.$router.push(`/customer_checkout/${response.data.orderId}`);
+              vm.$router.push(`/pay/${response.data.orderId}`);
             }
             // vm.getCart();
             // vm.isLoading = false;
@@ -379,6 +384,7 @@ methods: {
   created() {
   
     this.getCart();
+  
   }
 
 

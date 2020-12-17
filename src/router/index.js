@@ -9,8 +9,14 @@ import Orders from "@/components/pages/Orders";
 import CustomerOrders from "@/components/pages/CustomerOrders";
 import CustomerCheckout from "@/components/pages/CustomerCheckout";
 import Layout from "@/components/pages/views/Layout";
+import ProductDetail from "@/components/pages/views/ProductDetail";
 import Index from "@/components/pages/views/Index";
+import AboutUs from "@/components/pages/views/AboutUs";
+import News from "@/components/pages/views/News";
+import Shop from "@/components/pages/views/Shop";
 import Cart from "@/components/pages/Cart";
+import Pay from "@/components/pages/Pay";
+
 
 Vue.use(VueRouter);
 
@@ -43,6 +49,12 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: Cart
+   
+  },
+  {
+    path: "/pay/:orderId",
+    name: "Pay",
+    component: Pay
   },
 
   {
@@ -74,11 +86,34 @@ const routes = [
     path: "/layout",
     name: "Layout",
     component: Layout
+ 
+  },
+
+  {
+    path: '/layout/:id',
+    name: 'ProductDetail',
+    component: ProductDetail
   },
   {
     path: "/index",
     name: "Index",
     component: Index
+    
+  },
+  {
+    path: "/aboutus",
+    name: "AboutUs",
+    component: AboutUs
+  },
+  {
+    path: "/news",
+    name: "News",
+    component: News
+  },
+  {
+    path: "/shop",
+    name: "Shop",
+    component: Shop
   },
 
   {

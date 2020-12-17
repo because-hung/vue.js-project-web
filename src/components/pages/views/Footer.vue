@@ -7,13 +7,13 @@
             <ul class="list-group ">
               <li class="list-group-item border-0 h5" id="about">ABOUT</li>
               <li class="list-group-item border-0">
-                <router-link to="/latestNews">最新活動</router-link>
+                <router-link to="/news">最新活動</router-link>
               </li>
               <li class="list-group-item border-0">
-                <router-link to="/aboutUs">關於我們</router-link>
+                <router-link to="/aboutus">關於我們</router-link>
               </li>
               <li class="list-group-item border-0">
-                <router-link to="/marketInfo">門市資訊</router-link>
+                <router-link to="/shop">門市資訊</router-link>
               </li>
             </ul>
           </div>
@@ -51,7 +51,7 @@
                 <i class="fab fa-line fa-2x"></i>
               </li>
               <li class="list-inline-item">
-                <a href="https://github.com/npcenthusiasm">
+                <a href="https://github.com/because-hung">
                   <i class="fab fa-github fa-2x"></i>
                 </a>
               </li>
@@ -75,11 +75,11 @@ export default {};
 
 <style>
 .footer {
-  background-color: #dcdcdc;
+  background-color: #f8f9fa;
 }
 
 .footer .list-group li {
-  background-color: #dcdcdc;
+  background-color: #f8f9fa;
 }
 
 .copright {

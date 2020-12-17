@@ -2,27 +2,36 @@
     <div>
         <!--header-->
  
-    <nav class="navbar navbar-expand-lg " style="background-color:#dcdcdc;">
+    <nav class="navbar navbar-expand-lg bg-light" >
+
         <a class="navbar-brand" href="#"><img src="../../../../src/assets/img/logo3.png"  alt=""></a>
         
          
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
             <router-link to='/index' class="nav-link">
             首頁
             </router-link>
              
             </li>
+
             <li class="nav-item mx-1">
            <router-link to="/layout" class="nav-link">
              商品列表
             </router-link>
+
             </li>
-            
-          
-          
+              <li class="nav-item mx-1">
+                <router-link to="/news" class="nav-link">最新活動</router-link>
+              </li>
+             <li class="nav-item mx-1">
+                <router-link to="/aboutus" class="nav-link">關於我們</router-link>
+              </li>
+               <li class="nav-item mx-1">
+                <router-link to="/shop" class="nav-link">門市資訊</router-link>
+              </li>
           </ul>
         </div>
 
@@ -31,6 +40,7 @@
             <router-link to="/login">
              <div class="btn btn-outline-primary rounded-circle">
             <i class="fas fa-user-circle"></i>
+             會員登入
          </div>
             </router-link>
         
@@ -38,12 +48,15 @@
             
           <router-link to="/cart">
             <li class="list-inline-item">
-              <button class="btn btn-outline-primary rounded-circle btn-cart"
-              data-toggle="dropdown">
-              <i class="fas fa-cart-plus"></i>
-                <div class="badge badge-pill badge-danger"></div>
+              <button class="btn btn-outline-primary rounded-circle btn-cart">
+               我要結帳
+
+              <i class="fas fa-cart-plus "></i> 
+              <span class="badge badge-danger ml-2">{{cartNumber}}</span>
+               
               </button>
               </li>
+              
               </router-link>
               </ul>
       </nav>
@@ -94,11 +107,25 @@
       </div>
     </div>
 </template>
+<script>
+export default {
+  props:["cartNumber"],
+  data() {
+  
+    return {
+   
+ 
+    }
+    }
+  }
 
+
+
+</script>
 <style>
 
 .carousel-item{
-  height:600px;
+  height:500px;
 }
     .carousel-caption {
             background-color: rgba(0, 0, 0, .2);
@@ -111,15 +138,16 @@
   
 }
 .img-two{
-  background-image: url(../../../../src/assets/img/report/report2.jpg);
+  background-image: url(../../../../src/assets/img/report/report22.png);
    background-repeat:no-repeat;
-   background-position:center;
+   background-position:top;
   background-size:cover;
    
 }
 .img-three{
-  background-image: url(../../../../src/assets/img/report/report11.jpg);
+  background-image: url(../../../../src/assets/img/report/report21.jpg);
   background-repeat:no-repeat;
+     background-position:center;
     background-size:cover;
     
 }

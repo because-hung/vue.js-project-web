@@ -64,6 +64,8 @@ $colors: map-merge(
   $colors
 );
 
+$skin: #fff5ee !default;
+$aqua: #66ffff !default;
 $primary: $blue !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
@@ -76,6 +78,8 @@ $dark: $gray-800 !default;
 $theme-colors: () !default;
 $theme-colors: map-merge(
   (
+    "skin": $skin,
+    "aqua": $aqua,
     "primary": $primary,
     "secondary": $secondary,
     "success": $success,

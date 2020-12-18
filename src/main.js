@@ -7,6 +7,8 @@ import "bootstrap";
 import VeeValidate from "vee-validate";
 import zhTW from "vee-validate/dist/locale/zh_TW";
 import VueI18n from "vue-i18n";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import App from "./App.vue";
 import router from "./router";
@@ -36,8 +38,16 @@ Vue.use(VeeValidate, {
 });
 
 new Vue({
+  created() {
+    AOS.init({
+      offset: 120,
+      once: true,
+      duration: 2000
+    });
+  },
   i18n,
   router,
+
   render: h => h(App)
 }).$mount("#app");
 

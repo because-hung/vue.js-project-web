@@ -17,7 +17,6 @@ import Shop from "@/components/pages/views/Shop";
 import Cart from "@/components/pages/Cart";
 import Pay from "@/components/pages/Pay";
 
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -49,7 +48,6 @@ const routes = [
     path: "/cart",
     name: "Cart",
     component: Cart
-   
   },
   {
     path: "/pay/:orderId",
@@ -86,19 +84,17 @@ const routes = [
     path: "/layout",
     name: "Layout",
     component: Layout
- 
   },
 
   {
-    path: '/layout/:id',
-    name: 'ProductDetail',
+    path: "/layout/:id",
+    name: "ProductDetail",
     component: ProductDetail
   },
   {
     path: "/index",
     name: "Index",
     component: Index
-    
   },
   {
     path: "/aboutus",

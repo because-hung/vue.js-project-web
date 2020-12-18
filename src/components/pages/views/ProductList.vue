@@ -3,11 +3,10 @@
     <div class="middle container-fluid p-4 ">
       <div class="row">
         <div class="col-md-2 ">
-          
           <ul class="list-group pl-0 mb-4 mb-md-0 sticky-top ">
-          <h3 class="mb-3 font-weight-bold text-center text-md-left ">
-            所有商品
-          </h3>
+            <h3 class="mb-3 font-weight-bold text-center text-md-left ">
+              所有商品
+            </h3>
             <li class="list-group-item font-weight-bold ">
               <a href="#" @click.prevent="getCategory('沐浴乳')">沐浴乳</a>
             </li>
@@ -85,7 +84,7 @@
                   <button
                     type="button"
                     class="btn btn-outline-secondary btn-sm"
-               @click="getProduct(item.id)"
+                    @click="getProduct(item.id)"
                   >
                     <i
                       class="fas fa-spinner fa-spin"
@@ -128,7 +127,7 @@ export default {
       product: {},
       pagination: {},
       cart: {},
-      num:1,
+      num: 1,
 
       status: {
         loadingItem: ""
@@ -138,7 +137,8 @@ export default {
     };
   },
   components: {
-    Pagination,CartAlert
+    Pagination,
+    CartAlert
   },
   methods: {
     searchProduct(searchTitle) {
@@ -189,13 +189,12 @@ export default {
       vm.status.loadingItem = id;
       this.$http.get(url).then(response => {
         vm.product = response.data.product;
-  
+
         console.log(response);
         vm.status.loadingItem = "";
-    
       });
-          this.$router.push(`/layout/${id}`);
-          console.log(id);
+      this.$router.push(`/layout/${id}`);
+      console.log(id);
     },
 
     addtoCart(id, qty = 1) {
@@ -210,11 +209,8 @@ export default {
         console.log(response);
         vm.status.loadingItem = "";
         vm.getCart();
-        vm.$bus.$emit("cart:message","加入購物車成功","success");
-       
-     
+        vm.$bus.$emit("cart:message", "加入購物車成功", "success");
       });
-     
     },
     getCart() {
       const vm = this;
@@ -224,19 +220,20 @@ export default {
         // vm.productALL = response.data.productALL;
         vm.cart = response.data.data;
         console.log(response);
-       this.$bus.$emit("cart:Number",  //傳購物車的數量
-   response.data.data.carts.length
-    );
-    
+        this.$bus.$emit(
+          "cart:Number", //傳購物車的數量
+          response.data.data.carts.length
+        );
+
         vm.isLoading = false;
       });
     },
-     plusNum() {
+    plusNum() {
       this.num += 1;
     },
     minusNum() {
       // eslint-disable-next-line no-unused-expressions
-      this.num > 1 ? this.num -= 1 : this.num = 1;
+      this.num > 1 ? (this.num -= 1) : (this.num = 1);
     },
 
     createOrder() {
@@ -264,10 +261,8 @@ export default {
   created() {
     this.getProductALL();
     this.getCart();
- 
-  
+
     // vm.$bus.$emit('messsage:push');
-  
 
     //    this.$bus.$on("IndexCategory", Category => {
     // this.getCategory(Category);
@@ -280,9 +275,8 @@ export default {
 };
 </script>
 
-<style > 
+<style>
 .num-text {
   max-width: 80px;
 }
-
 </style>

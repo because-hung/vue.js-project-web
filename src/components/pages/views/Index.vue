@@ -174,16 +174,24 @@
       </div>
     </section>
 
+       <div>
+     <Swiper ></Swiper>
+    </div>
+
     <!--footer-->
     <div>
       <Footer />
     </div>
+
+  
   </div>
 </template>
 
 <script>
 import Header from "./Header";
 import Footer from "./Footer";
+import Swiper from "../../Swiper";
+
 
 export default {
   data() {
@@ -191,7 +199,8 @@ export default {
   },
   components: {
     Footer,
-    Header
+    Header,
+  Swiper
   }
 };
 </script>

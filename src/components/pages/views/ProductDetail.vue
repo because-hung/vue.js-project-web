@@ -102,6 +102,10 @@
       </div>
     </div>
 
+      <div>
+     <Swiper ></Swiper>
+    </div>
+
     <div>
       <Footer></Footer>
     </div>
@@ -113,6 +117,7 @@ import $ from "jquery";
 import Header from "./Header";
 import Footer from "./Footer";
 import CartAlert from "../../CartAlert";
+import Swiper from "../../Swiper";
 
 export default {
   data() {
@@ -120,6 +125,7 @@ export default {
       productId: "",
       product: {},
       CartNumber: 0,
+      
       status: {
         loadingItem: ""
       },
@@ -130,7 +136,8 @@ export default {
   components: {
     Footer,
     CartAlert,
-    Header
+    Header,
+    Swiper
   },
   methods: {
     getProduct(id) {
@@ -139,8 +146,10 @@ export default {
       vm.status.loadingItem = id;
       this.$http.get(url).then(response => {
         vm.product = response.data.product;
+      
         $("#productModal").modal("show");
         console.log(response);
+      
         vm.status.loadingItem = "";
       });
     },

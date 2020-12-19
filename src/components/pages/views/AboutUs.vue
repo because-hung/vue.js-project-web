@@ -11,8 +11,8 @@
       </div>
 
       <div class="row bg-gray">
-        <div class="col-md-6 col-12 order-0 order-md-1">
-          <div class="about-img design"></div>
+        <div class="col-md-6 col-12 order-0 order-md-1 about-img-one ">
+      
         </div>
         <div class="col-md-6 p-4 order-1 order-md-0">
           <div class="about-title">
@@ -26,8 +26,8 @@
         </div>
       </div>
       <div class="row bg-white">
-        <div class="col-md-6 col-12">
-          <div class="about-img future"></div>
+        <div class="col-md-6 col-12 about-img-two">
+         
         </div>
         <div class="col-md-6 p-4">
           <div class="about-title">
@@ -42,8 +42,8 @@
       </div>
 
       <div class="row bg-gray">
-        <div class="col-md-6 col-12 order-0 order-md-1">
-          <div class="about-img people"></div>
+        <div class="col-md-6 col-12 order-0 order-md-1 about-img-three">
+      
         </div>
         <div class="col-md-6 p-4 order-1 order-md-0">
           <div class="about-title">
@@ -77,3 +77,19 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.about-img-one{
+background-image: url(../../../../src/assets/img/report/img2.jpg);
+
+}
+
+.about-img-two{
+  background-image: url(../../../../src/assets/img/report/us2.jpg);
+}
+
+.about-img-three{
+  background-image: url(../../../../src/assets/img/report/us3.jpg);
+}
+
+</style>

@@ -124,7 +124,7 @@ export default {
     return {
       searchText: "",
       productALL: [],
-      product: {},
+      
       pagination: {},
       cart: {},
       num: 1,
@@ -184,17 +184,9 @@ export default {
       });
     },
     getProduct(id) {
-      const vm = this;
-      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
-      vm.status.loadingItem = id;
-      this.$http.get(url).then(response => {
-        vm.product = response.data.product;
-
-        console.log(response);
-        vm.status.loadingItem = "";
-      });
+    
       this.$router.push(`/layout/${id}`);
-      console.log(id);
+   
     },
 
     addtoCart(id, qty = 1) {

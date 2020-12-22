@@ -50,7 +50,7 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <router-link to="/layout" class="nav-link">
+            <router-link to="/index" class="nav-link">
               <i class="far fa-list-alt"></i> 前台
             </router-link>
           </li>

@@ -7,21 +7,30 @@
             <h3 class="mb-3 font-weight-bold text-center text-md-left ">
               所有商品
             </h3>
+            <a href="#" @click.prevent="reload()">
             <li class="list-group-item font-weight-bold ">
-              <a href="#" @click.prevent="getCategory('沐浴乳')">沐浴乳</a>
-            </li>
+             所有商品
+            </li></a>
+            <a href="#" @click.prevent="getCategory('沐浴乳')">
             <li class="list-group-item font-weight-bold ">
-              <a href="#" @click.prevent="getCategory('洗髮精')">洗髮精</a>
-            </li>
+              沐浴乳
+            </li></a> 
+            <a href="#" @click.prevent="getCategory('洗髮精')">
             <li class="list-group-item font-weight-bold ">
-              <a href="#" @click.prevent="getCategory('洗面乳')">洗面乳</a>
-            </li>
+             洗髮精
+            </li></a>
+             <a href="#" @click.prevent="getCategory('洗面乳')">
             <li class="list-group-item font-weight-bold ">
-              <a href="#" @click.prevent="getCategory('肥皂')">肥皂</a>
-            </li>
+             洗面乳
+            </li></a>
+              <a href="#" @click.prevent="getCategory('肥皂')">
             <li class="list-group-item font-weight-bold ">
-              <a href="#" @click.prevent="getCategory('配件')">配件</a>
-            </li>
+            肥皂
+            </li></a>
+                  <a href="#" @click.prevent="getCategory('配件')">
+            <li class="list-group-item font-weight-bold ">
+            配件
+            </li></a>
             <div class="input-group mt-4">
               <input
                 type="text"
@@ -57,9 +66,9 @@
                     item.category
                   }}</span>
                   <h5 class="card-title">
-                    <a href="#" class="text-dark">{{ item.title }}</a>
+                    <a href="#" class="text-dark product-title">{{ item.title }}</a>
                   </h5>
-                  <p class="card-text">{{ item.content }}</p>
+               <p class="card-text product-content">{{ item.description }}</p>
                   <div
                     class="d-flex justify-content-between align-items-baseline"
                   >
@@ -90,7 +99,7 @@
                       class="fas fa-spinner fa-spin"
                       v-if="status.loadingItem === item.id"
                     ></i>
-                    查看更多
+                    了解產品更多
                   </button>
                   <button
                     type="button"
@@ -159,7 +168,11 @@ export default {
         });
       }
     },
+    reload(){
+      this.$router.go(0);
+    },
     getCategory(currentcategory) {
+      
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
       vm.isLoading = true;
@@ -171,6 +184,7 @@ export default {
         vm.productALL = filterProduct;
         vm.isLoading = false;
       });
+      
     },
     getProductALL(currentPage = 1) {
       const vm = this;
@@ -270,5 +284,17 @@ export default {
 <style>
 .num-text {
   max-width: 80px;
+}
+
+.list-group a{
+  font-size:20px;
+}
+
+.product-title{
+    font-size:28px;
+}
+
+.product-content{
+    font-size:20px;
 }
 </style>

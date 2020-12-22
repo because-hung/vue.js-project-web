@@ -2,9 +2,9 @@
   <div>
     <!--header-->
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light" >
       <a class="navbar-brand" href="#"
-        ><img src="../../../../src/assets/img/logo3.png" alt=""
+        data-aos="zoom-out"><img src="../../../../src/assets/img/logo3.png" alt="" 
       /></a>
 
       <div class="collapse navbar-collapse" id="navbarNav">

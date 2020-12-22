@@ -26,7 +26,7 @@
 
                 <h2>肥皂可以吃！？</h2>
                 <br />
-                <p>
+                <p class="text-justify">
                   Slack
                   專業團隊使用天然食品級的原料成份，不添加任何化學物質，生產出對肌膚.頭皮最好的清潔用品，經專業醫生
                   團隊改良及證明，產品對保濕.清潔.治療敏感性肌膚與頭皮　，十分有效
@@ -64,7 +64,7 @@
                 知名影后 <strong class="text-danger">艾蜜兒</strong> 強力推薦
               </h2>
               <br />
-              <p>
+              <p class="text-justify">
                 知名電影影星艾蜜兒是 Slack的大客戶，長期使用 Slack的產品
                 ，艾蜜兒本身愛用之外，也推薦給家人朋友使用，Slack
                 的產品深受親朋好友的喜愛，艾蜜兒本人表示很注重保養跟養生，
@@ -175,6 +175,7 @@
     </section>
 
        <div>
+       <div class="container-fluid bg-danger text-white p-3 font-weight-bold text-center " style="font-size:30px;" data-aos="zoom-up">熱門精選商品</div>
      <Swiper ></Swiper>
     </div>
 

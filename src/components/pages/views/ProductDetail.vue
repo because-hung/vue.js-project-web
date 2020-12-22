@@ -40,7 +40,7 @@
             </div>
             <hr />
 
-            <div class="footer mt-3 d-flex justify-content-between">
+            <div class="footer mt-5 d-flex justify-content-between ">
               <div
                 class="btn-group border border-secondary mr-2 selectNum"
                 role="group"
@@ -50,7 +50,7 @@
                 </button>
                 <input
                   type="text"
-                  class="btn btn-white num-text"
+                  class="btn btn-white num-text "
                   v-model.number="num"
                 />
                 <span class="mt-2">{{ product.unit }}</span>
@@ -67,10 +67,10 @@
                 元
               </div>
             </div>
-            <div class="mt-3 text-right">
+            <div class="mt-5 text-right ">
               <button
                 type="button"
-                class="btn btn-primary "
+                class="btn btn-primary p-3"
                 @click="addtoCart(product.id, product.num)"
               >
                 <i
@@ -81,13 +81,13 @@
               </button>
             </div>
 
-            <div class="my-4">
-              <h5>商品描述</h5>
-              <p style="line-height:2">{{ product.description }}</p>
+            <div class="my-5">
+              <h5 class="h3 bg-warning p-2 font-weight-bold text-center">商品資訊</h5>
+              <p class="product-content mt-4 text-justify">{{ product.description }}</p>
             </div>
             <div class="my-4">
-              <h5>商品資訊</h5>
-              <ul class="pl-4"></ul>
+
+               <p class="product-content text-justify">{{  product.content }}</p>
             </div>
           </div>
         </div>
@@ -103,6 +103,7 @@
     </div>
 
       <div>
+<div class="container-fluid bg-warning p-3 font-weight-bold text-center mt-5" style="font-size:30px;" >買了此商品的人，也買了...</div>
      <Swiper ></Swiper>
     </div>
 
@@ -201,5 +202,10 @@ export default {
 <style scoped>
 .badge {
   width: 50px;
+}
+
+.product-content{
+line-height:1.5;
+font-size:26px;
 }
 </style>

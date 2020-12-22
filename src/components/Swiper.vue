@@ -15,7 +15,7 @@
                   <h5 class="card-title">
                     <a href="#" class="text-dark">{{ item.title }}</a>
                   </h5>
-                  <p class="card-text">{{ item.content }}</p>
+                  <p class="card-text">{{ item.description }}</p>
                   <div
                     class="d-flex justify-content-between align-items-baseline"
                   >
@@ -27,11 +27,11 @@
                       v-if="item.origin_price > 0"
                       >原價 {{ item.origin_price }} 元</del
                     >
-                    <div class="h4 ml-auto" v-if="item.origin_price > 0">
+                    <div class="h3 ml-auto" v-if="item.origin_price > 0">
                       <span class="badge badge-danger mr-1 py-2">特價 </span>
                       {{ item.price }} 元
                     </div>
-                    <div class="h4 ml-auto" v-else="item.price">
+                    <div class="h3 ml-auto" v-else="item.price">
                       {{ item.price }} 元
                     </div>
                   </div>
@@ -76,7 +76,7 @@ import 'swiper/swiper-bundle.css';
     },
     methods: {
 
-     getProductALL(currentPage = Math.floor(Math.random()*4)+1) {
+     getProductALL(currentPage = Math.floor(Math.random()*3)+1) {  
       console.log(currentPage);
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products?page=${currentPage}`;

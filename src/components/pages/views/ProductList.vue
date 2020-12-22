@@ -8,29 +8,35 @@
               所有商品
             </h3>
             <a href="#" @click.prevent="reload()">
-            <li class="list-group-item font-weight-bold ">
-             所有商品
-            </li></a>
+              <li class="list-group-item font-weight-bold ">
+                所有商品
+              </li></a
+            >
             <a href="#" @click.prevent="getCategory('沐浴乳')">
-            <li class="list-group-item font-weight-bold ">
-              沐浴乳
-            </li></a> 
+              <li class="list-group-item font-weight-bold ">
+                沐浴乳
+              </li></a
+            >
             <a href="#" @click.prevent="getCategory('洗髮精')">
-            <li class="list-group-item font-weight-bold ">
-             洗髮精
-            </li></a>
-             <a href="#" @click.prevent="getCategory('洗面乳')">
-            <li class="list-group-item font-weight-bold ">
-             洗面乳
-            </li></a>
-              <a href="#" @click.prevent="getCategory('肥皂')">
-            <li class="list-group-item font-weight-bold ">
-            肥皂
-            </li></a>
-                  <a href="#" @click.prevent="getCategory('配件')">
-            <li class="list-group-item font-weight-bold ">
-            配件
-            </li></a>
+              <li class="list-group-item font-weight-bold ">
+                洗髮精
+              </li></a
+            >
+            <a href="#" @click.prevent="getCategory('洗面乳')">
+              <li class="list-group-item font-weight-bold ">
+                洗面乳
+              </li></a
+            >
+            <a href="#" @click.prevent="getCategory('肥皂')">
+              <li class="list-group-item font-weight-bold ">
+                肥皂
+              </li></a
+            >
+            <a href="#" @click.prevent="getCategory('配件')">
+              <li class="list-group-item font-weight-bold ">
+                配件
+              </li></a
+            >
             <div class="input-group mt-4">
               <input
                 type="text"
@@ -66,9 +72,13 @@
                     item.category
                   }}</span>
                   <h5 class="card-title">
-                    <a href="#" class="text-dark product-title">{{ item.title }}</a>
+                    <a href="#" class="text-dark product-title">{{
+                      item.title
+                    }}</a>
                   </h5>
-               <p class="card-text product-content">{{ item.description }}</p>
+                  <p class="card-text product-content">
+                    {{ item.description }}
+                  </p>
                   <div
                     class="d-flex justify-content-between align-items-baseline"
                   >
@@ -103,7 +113,7 @@
                   </button>
                   <button
                     type="button"
-                    class="btn btn-outline-danger btn-sm ml-auto"
+                    class="btn btn-outline-danger btn-sm ml-auto "
                     @click="addtoCart(item.id)"
                   >
                     加到購物車
@@ -133,7 +143,7 @@ export default {
     return {
       searchText: "",
       productALL: [],
-      
+
       pagination: {},
       cart: {},
       num: 1,
@@ -168,11 +178,10 @@ export default {
         });
       }
     },
-    reload(){
+    reload() {
       this.$router.go(0);
     },
     getCategory(currentcategory) {
-      
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
       vm.isLoading = true;
@@ -184,7 +193,6 @@ export default {
         vm.productALL = filterProduct;
         vm.isLoading = false;
       });
-      
     },
     getProductALL(currentPage = 1) {
       const vm = this;
@@ -198,9 +206,7 @@ export default {
       });
     },
     getProduct(id) {
-    
       this.$router.push(`/layout/${id}`);
-   
     },
 
     addtoCart(id, qty = 1) {
@@ -281,20 +287,27 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .num-text {
   max-width: 80px;
 }
 
-.list-group a{
-  font-size:20px;
+.list-group a {
+  font-size: 20px;
 }
 
-.product-title{
-    font-size:28px;
+.list-group li:hover {
+  background-color: #46a3ff;
+  color: white;
+}
+.product-title {
+  font-size: 28px;
 }
 
-.product-content{
-    font-size:20px;
+.product-content {
+  font-size: 20px;
+}
+button:hover {
+  padding: 3%;
 }
 </style>

@@ -2,9 +2,9 @@
   <div>
     <!--header-->
 
-    <nav class="navbar navbar-expand-lg bg-light" >
-      <a class="navbar-brand" href="#"
-        data-aos="zoom-out"><img src="../../../../src/assets/img/logo3.png" alt="" 
+    <nav class="navbar navbar-expand-lg bg-light">
+      <a class="navbar-brand" href="#" data-aos="zoom-out"
+        ><img src="../../../../src/assets/img/logo3.png" alt=""
       /></a>
 
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -155,5 +155,13 @@ export default {
   background-repeat: no-repeat;
 
   background-size: cover;
+}
+.nav-item:hover {
+  font-size: 24px;
+  background-color: skyblue;
+}
+
+.nav-link:hover {
+  color: brown;
 }
 </style>

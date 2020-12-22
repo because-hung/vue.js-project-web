@@ -1,45 +1,8 @@
 <template>
   <div>
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg " style="background-color:#dcdcdc;">
-      <a class="navbar-brand" href="#"
-        ><img src="../../../src/assets/img/logo3.png" alt=""
-      /></a>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <router-link to="/index" class="nav-link">
-              首頁
-            </router-link>
-          </li>
-          <li class="nav-item mx-1">
-            <router-link to="/layout" class="nav-link">
-              商品列表
-            </router-link>
-          </li>
-        </ul>
-      </div>
-
-      <ul class="list-inline mb-0">
-        <li class="list-inline-item">
-          <router-link to="/login">
-            <div class="btn btn-outline-primary rounded-circle">
-              <i class="fas fa-user-circle"></i> 會員登入
-            </div>
-          </router-link>
-        </li>
-
-        <router-link to="/cart">
-          <li class="list-inline-item">
-            <button class="btn btn-outline-primary rounded-circle btn-cart">
-              <i class="fas fa-cart-plus"></i> 我要結帳
-            </button>
-          </li>
-        </router-link>
-      </ul>
-    </nav>
-    <div></div>
+    <div>
+      <Header></Header>
+    </div>
 
     <!--cart-->
 
@@ -261,6 +224,7 @@ export default {
       cart: {},
       cartLen: "",
       Sum: 0,
+      Num: 0,
       status: {
         loadingItem: ""
       },
@@ -291,12 +255,15 @@ export default {
         vm.cart = response.data.data;
         vm.cartLen = response.data.data.carts.length;
 
-        for (var i = 0; i < vm.cartLen; i++) {
-          vm.Sum += response.data.data.carts[i].qty;
+        if (vm.Num == 0) {
+          for (var i = 0; i < vm.cartLen; i++) {
+            vm.Sum += response.data.data.carts[i].qty;
+          }
         }
         console.log(response);
 
         vm.isLoading = false;
+        vm.Num = 1;
       });
     },
 
@@ -308,6 +275,7 @@ export default {
         vm.getCart();
         console.log(response);
         vm.isLoading = false;
+        this.$router.go(0);
       });
     },
     addCouponCode() {
@@ -319,6 +287,7 @@ export default {
       vm.isLoading = true;
       this.$http.post(url, { data: coupon }).then(response => {
         vm.getCart();
+
         console.log(response);
         vm.isLoading = false;
       });

@@ -36,7 +36,12 @@
                 </p>
                 <br />
                 <router-link to="layout">
-                  <a href="#" class="btn btn-info mt-5">查看更多商品</a>
+                  <a
+                    href="#"
+                    class="btn btn-hover btn-info mt-5"
+                    data-aos="fade-down-left"
+                    >查看更多商品</a
+                  >
                 </router-link>
               </div>
             </div>
@@ -80,7 +85,12 @@
 
               <div class="text-right mt-5">
                 <router-link to="layout">
-                  <a href="#" class="btn btn-info text-right">查看更多商品</a>
+                  <a
+                    href="#"
+                    class="btn btn-hover btn-info text-right"
+                    data-aos="flip-down"
+                    >查看更多商品</a
+                  >
                 </router-link>
               </div>
             </div>
@@ -174,17 +184,21 @@
       </div>
     </section>
 
-       <div>
-       <div class="container-fluid bg-danger text-white p-3 font-weight-bold text-center " style="font-size:30px;" data-aos="zoom-up">熱門精選商品</div>
-     <Swiper ></Swiper>
+    <div>
+      <div
+        class="container-fluid bg-danger text-white p-3 font-weight-bold text-center "
+        style="font-size:30px;"
+        data-aos="zoom-up"
+      >
+        熱門精選商品
+      </div>
+      <Swiper></Swiper>
     </div>
 
     <!--footer-->
     <div>
       <Footer />
     </div>
-
-  
   </div>
 </template>
 
@@ -193,7 +207,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Swiper from "../../Swiper";
 
-
 export default {
   data() {
     return {};
@@ -201,7 +214,7 @@ export default {
   components: {
     Footer,
     Header,
-  Swiper
+    Swiper
   }
 };
 </script>
@@ -278,5 +291,9 @@ export default {
   width: 20%;
   height: 2px;
   background-color: gray;
+}
+.btn-hover:hover {
+  padding: 3%;
+  background-color: #7373b9;
 }
 </style>

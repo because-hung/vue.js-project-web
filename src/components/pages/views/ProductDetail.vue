@@ -11,7 +11,7 @@
       <div class="row ">
         <div class="col-md-5  ">
           <div class="mt-4">
-            <a href="#" class="badge badge-warning p-1">{{
+            <a href="#" class="badge badge-warning p-2">{{
               product.category
             }}</a>
             <div class="my-4">
@@ -71,7 +71,7 @@
               <button
                 type="button"
                 class="btn btn-primary p-3"
-                @click="addtoCart(product.id, product.num)"
+                @click="addtoCart(product.id, num)"
               >
                 <i
                   class="fas fa-spinner fa-spin"
@@ -82,12 +82,15 @@
             </div>
 
             <div class="my-5">
-              <h5 class="h3 bg-warning p-2 font-weight-bold text-center">商品資訊</h5>
-              <p class="product-content mt-4 text-justify">{{ product.description }}</p>
+              <h5 class="h3 bg-warning p-2 font-weight-bold text-center">
+                商品資訊
+              </h5>
+              <p class="product-content mt-4 text-justify">
+                {{ product.description }}
+              </p>
             </div>
             <div class="my-4">
-
-               <p class="product-content text-justify">{{  product.content }}</p>
+              <p class="product-content text-justify">{{ product.content }}</p>
             </div>
           </div>
         </div>
@@ -102,9 +105,14 @@
       </div>
     </div>
 
-      <div>
-<div class="container-fluid bg-warning p-3 font-weight-bold text-center mt-5" style="font-size:30px;" >買了此商品的人，也買了...</div>
-     <Swiper ></Swiper>
+    <div>
+      <div
+        class="container-fluid bg-warning p-3 font-weight-bold text-center mt-5"
+        style="font-size:30px;"
+      >
+        買了此商品的人，也買了...
+      </div>
+      <Swiper></Swiper>
     </div>
 
     <div>
@@ -126,7 +134,7 @@ export default {
       productId: "",
       product: {},
       CartNumber: 0,
-      
+
       status: {
         loadingItem: ""
       },
@@ -147,10 +155,10 @@ export default {
       vm.status.loadingItem = id;
       this.$http.get(url).then(response => {
         vm.product = response.data.product;
-      
+
         $("#productModal").modal("show");
         console.log(response);
-      
+
         vm.status.loadingItem = "";
       });
     },
@@ -201,11 +209,10 @@ export default {
 </script>
 <style scoped>
 .badge {
-  width: 50px;
+  width: 60px;
 }
 
-.product-content{
-line-height:1.5;
-font-size:26px;
+.product-content {
+  font-size: 26px;
 }
 </style>

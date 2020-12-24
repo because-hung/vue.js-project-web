@@ -4,8 +4,8 @@
       <Header></Header>
     </div>
 
-    <div class="marketInfo">
-      <div class="container-fluid">
+    <div class="marketInfo" style="overflow:hidden;">
+      <div class="container-fluid mt-1">
         <div class="jumbotron jumbotron-bg-cover d-flex banner-img"></div>
       </div>
       <div class="title text-center">
@@ -13,10 +13,10 @@
         <h1 class="h5">門市資訊</h1>
       </div>
       <div class="row store-wrap">
-        <div class="col-md-6 p-4 h-100">
+        <div class="col-lg-6 p-4 h-100 order-lg-0 order-1">
           <hr />
           <div class="d-flex ">
-            <div class="store_info d-flex align-items-center p-5 ">
+            <div class="store_info d-flex align-items-center p-lg-5 p-md-3">
               <div class="title  bg-warning p-2 mb-5">
                 <h2 class="ml-1 align-self-start store-name ">台</h2>
                 <h2 class="ml-1 align-self-start store-name ">中</h2>
@@ -46,12 +46,12 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 p-4 h-100">
+        <div class="col-lg-6 p-4 h-100 order-lg-1 order-0">
           <hr />
           <div class="store_map">
             <iframe
               id="map"
-              width="100%"
+              width="95%"
               height="500px;"
               frameborder="0"
               marginheight="0"
@@ -93,6 +93,7 @@ export default {
   background-size: cover;
   background-position: center;
   height: 500px;
+
 }
 
 .title {
@@ -105,5 +106,14 @@ export default {
 
 .infomation li {
   font-size: 22px;
+}
+
+@media (max-width:375px){
+
+
+.infomation li {
+  font-size: 18px;
+}
+
 }
 </style>

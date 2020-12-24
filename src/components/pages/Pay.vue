@@ -1,22 +1,22 @@
-<template>
+<template >
   <div>
     <div>
       <Header></Header>
     </div>
 
-    <div class="logo-header mt-5 d-flex justify-content-center ">
-      <img src="../../../src/assets/img/logo2.png" alt="" />
+    <div class="logo-header mt-5 d-flex justify-content-center " >
+      <img src="../../../src/assets/img/logo2.png" alt="" class="logoImg">
       <h1 class=" text-secondary ml-3">Slack 結帳</h1>
     </div>
 
-    <div class="my-5 row justify-content-center">
-      <div class="container d-flex header align-items-center text-center">
-        <div class="col ">
+    <div class="my-5 container justify-content-center">
+      <div class="row d-flex header align-items-center text-center">
+        <div class="col-12 col-md-4 mt-3">
           <div class="alert alert-secondary alert-rounded mb-0" role="alert">
             1.輸入訂單資料
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-4 mt-3 ">
           <div
             v-if="!order.is_paid"
             class="alert alert-success alert-rounded mb-0"
@@ -32,7 +32,7 @@
             2.金流付款
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-4 mt-3 ">
           <div
             v-if="!order.is_paid"
             class="alert alert-secondary alert-rounded mb-0"
@@ -42,14 +42,14 @@
           </div>
           <div
             v-else
-            class="alert alert-success alert-rounded mb-0"
+            class="alert alert-success alert-rounded mb-0 "
             role="alert"
           >
             3.完成
           </div>
         </div>
       </div>
-      <form class="container mt-4 shadow" @submit.prevent="payOrder">
+      <form class="p-4 mt-4 shadow" @submit.prevent="payOrder" >
         <table class="table">
           <thead>
             <th>品名</th>
@@ -176,4 +176,17 @@ td {
   font-size: 24px;
   font-weight: 700;
 }
+body{
+  overflow-x:hidden !important;
+}
+
+@media (max-width:375px){
+  .header{
+    flex-direction:column;
+}
+.logoImg{
+  display:none;
+}
+}
+
 </style>

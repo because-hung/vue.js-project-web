@@ -8,21 +8,21 @@
 
     <div class="container">
       <div class="logo-header mt-5 d-flex justify-content-center ">
-        <img src="../../../src/assets/img/logo2.png" alt="" />
+        <img src="../../../src/assets/img/logo2.png" alt="" class="logoImg">
         <h1 class=" text-secondary ml-3">Slack 結帳</h1>
       </div>
       <section class="form-row align-items-center text-center mt-5">
-        <div class="col">
+        <div class="col-12 col-md-4 ">
           <div class="alert alert-success alert-rounded mb-0" role="alert">
             1.輸入訂單資料
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
           <div class="alert alert-secondary alert-rounded mb-0" role="alert">
             2.金流付款
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
           <div class="alert alert-secondary alert-rounded mb-0" role="alert">
             3.完成
           </div>
@@ -30,9 +30,9 @@
       </section>
     </div>
 
-    <div class="middle">
+    <div class="middle"  style="overflow:hidden;">
       <div class="row ">
-        <div class="col-6 shadow mt-3 " style="margin-left:5%;">
+        <div class="col-lg-6 col-12 shadow mt-3 product " >
           <table
             class="table mt-4 mx-auto"
             v-if="cart.total >= 1"
@@ -95,7 +95,7 @@
           </table>
           <div
             class="input-group mb-5 mt-2 input-group-sm ml-auto"
-            style="width:30%;margin-right:8%;"
+          
             v-if="cart.total >= 1"
           >
             <input
@@ -116,9 +116,9 @@
           </div>
         </div>
 
-        <div class="col-5 mt-3  shadow">
-          <div class="row">
-            <form class="" @submit.prevent="createOrder" style="width:70%;">
+        <div class="col-lg-5 col-12 mt-3 shadow ">
+          <div class=" row justify-content-center  justify-content-lg-start">
+            <form  @submit.prevent="createOrder" style="width:70%;">
               <div class="form-group">
                 <label for="useremail">Email</label>
                 <input
@@ -342,4 +342,30 @@ tr {
 td {
   font-size: 18px;
 }
+
+.product{
+  margin-left:4%;
+}
+.input-group{
+  width:30%;
+  margin-right:8%;
+}
+
+@media (max-width:375px){
+.product{
+  margin-left:0;
+}
+.order-img {
+display:none;
+}
+
+.input-group{
+  width:70%;
+
+}
+.logoImg{
+  display:none;
+  }
+}
+
 </style>

@@ -2,9 +2,9 @@
   <div>
     <div class="middle container-fluid p-4 ">
       <div class="row">
-        <div class="col-md-2 ">
-          <ul class="list-group pl-0 mb-4 mb-md-0 sticky-top ">
-            <h3 class="mb-3 font-weight-bold text-center text-md-left ">
+        <div class="col-lg-2 ">
+          <ul class="list-group pl-0 mb-4 mb-lg-0 ">
+            <h3 class="mb-3 font-weight-bold text-center text-lg-left ">
               所有商品
             </h3>
             <a href="#" @click.prevent="reload()">
@@ -54,11 +54,11 @@
           </ul>
         </div>
         <CartAlert></CartAlert>
-        <div class="col-md-9 pl-0">
+        <div class="col-lg-9 pl-0">
           <loading :active.sync="isLoading"></loading>
           <div class="row mt-4">
             <div
-              class="col-md-4 mb-4"
+              class="col-lg-4 col-md-6 col-12 mb-4"
               v-for="item in productALL"
               :key="item.id"
             >
@@ -288,8 +288,12 @@ export default {
 </script>
 
 <style scoped>
+
 .num-text {
   max-width: 80px;
+}
+.list-group{
+  position:sticky; top: 10px; 
 }
 
 .list-group a {
@@ -310,4 +314,13 @@ export default {
 button:hover {
   padding: 3%;
 }
+
+@media (max-width:375px){
+  .list-group{
+  position:static;
+}
+
+}
+
+
 </style>

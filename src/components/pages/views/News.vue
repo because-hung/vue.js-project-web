@@ -14,10 +14,10 @@
       <div class=" news-content">
         <div class="row  ">
           <div
-            class="col-md-6 col-12 order-md-1 about-img-one"
+            class="col-lg-6 col-12 order-lg-1 about-img-one"
             data-aos="fade-left"
           ></div>
-          <div class="col-md-6 p-4  order-md-0 ">
+          <div class="col-lg-6 p-4  order-lg-0 ">
             <div class="about-title p-5">
               <h2>
                 知名影后
@@ -54,17 +54,26 @@
         <hr />
         <div class="row  ">
           <div
-            class="col-md-6 col-12 order-md-1 about-img-two"
+            class="col-lg-6 col-12 order-lg-1 about-img-two"
             data-aos="zoom-in-left"
           ></div>
-          <div class="col-md-6 p-4  order-md-0 ">
+          <div class="col-lg-6 p-4  order-lg-0 ">
             <div class="about-title p-5" data-aos="zoom-in-right">
               <h2 class="bg-warning p-2 ">新品上市</h2>
 
               <p class="text-justify mt-5 p-3 ">
                 這款 MANxMYTH
-                竹炭深層潔淨洗面乳，由專業團隊研發而成，竹炭加上奈米的技術，可以把深層的汙垢．角質徹底潔淨乾淨，還給肌膚一個清白，加上強大的抗汗去油的能力，根本專為男人而打造的，讓你從阿宅變型男，本產品於下個月就會上市，各大通路都買的到，盡請期待，Coming
-                Soon....
+                竹炭深層潔淨洗面乳，由專業團隊研發而成，竹炭加上奈米的技術，可以把深層的汙垢．角質徹底潔淨乾淨，還給肌膚一個清白，加上強大的抗汗去油的能力
+          
+              </p>
+
+               <p class="text-justify mt-5 p-3 ">
+          根本專為男人而打造的，讓你從阿宅變型男，本產品於下個月就會上市，各大通路都買的到
+    
+              </p>
+
+                  <p class="text-justify mt-5 p-3 ">
+    盡請期待，Coming Soon....
               </p>
             </div>
           </div>
@@ -73,16 +82,15 @@
         <hr />
         <div class="row  ">
           <div
-            class="col-md-6 col-12 order-md-1 about-img-three"
+            class="col-lg-6 col-12 order-lg-1 about-img-three"
             data-aos="fade-down"
           ></div>
-          <div class="col-md-6 p-4  order-md-0 ">
+          <div class="col-lg-6 p-4  order-lg-0 ">
             <div class="about-title p-5" data-aos="fade-up">
               <h2>
-                Slack 周年慶 全館指定商品
-                <strong class="text-white bg-danger p-2">特價優惠</strong>
+                Slack 周年慶 
               </h2>
-
+<h2>  全館指定商品  <strong class="text-white bg-danger p-2 "> 特價優惠</strong></h2>
               <p class="text-justify mt-5 p-3 ">
                 Slack
                 周年慶，全館指定商品特價優惠，即日期申辦加入會員，即可再享9折優惠，讓你買到手軟，打折打到骨折
@@ -159,4 +167,23 @@ export default {
 .about-title p {
   font-size: 30px;
 }
+strong{
+  line-height:2;
+}
+
+@media (max-width:375px){
+
+  .about-title h2 {
+  font-size: 32px;
+}
+
+.about-title p {
+  font-size: 18px;
+}
+
+
+
+
+}
+
 </style>

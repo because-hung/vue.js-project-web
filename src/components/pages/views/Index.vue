@@ -12,16 +12,16 @@
         class="container-fluid py-5 bg-light banner-one bg-skin"
         style="position: relative"
       >
-        <div class="row justify-content-end text-md-dark">
+        <div class="row justify-content-end text-lg-dark">
           <div
-            class="col-md-5 bg-cover backimg-one"
+            class="col-lg-5 bg-cover backimg-one"
             data-aos="flip-left"
             style="position: absolute; top:0; bottom: 0;"
           ></div>
 
           <div class="container">
             <div class="row ">
-              <div class="col-md-7 content-one " data-aos="fade-up">
+              <div class="col-lg-7 content-one " data-aos="fade-up">
                 <h2>什麼！！！ 別鬧吧！</h2>
 
                 <h2>肥皂可以吃！？</h2>
@@ -31,7 +31,7 @@
                   專業團隊使用天然食品級的原料成份，不添加任何化學物質，生產出對肌膚.頭皮最好的清潔用品，經專業醫生
                   團隊改良及證明，產品對保濕.清潔.治療敏感性肌膚與頭皮　，十分有效
                 </p>
-                <p class="text-danger font-weight-bolder">
+                <p class="text-danger font-weight-bolder dangerWord">
                   本公司的產品雖然味道很香，但是請勿把肥皂當食物享用，以上純屬廣告效果
                 </p>
                 <br />
@@ -54,7 +54,7 @@
       >
         <div class="row">
           <div
-            class="col-md-5 bg-cover backimg-two "
+            class="col-lg-5 bg-cover backimg-two "
             data-aos="flip-left"
             style="
         position: absolute;top:0;bottom: 0;
@@ -63,8 +63,8 @@
           ></div>
         </div>
         <div class="container">
-          <div class="row justify-content-end text-md-dark ">
-            <div class="col-md-7" data-aos="fade-up">
+          <div class="row justify-content-end text-lg-dark ">
+            <div class="col-lg-7" data-aos="fade-up">
               <h2>
                 知名影后 <strong class="text-danger">艾蜜兒</strong> 強力推薦
               </h2>
@@ -111,7 +111,7 @@
             <div class="line-box align-self-center mx-3 mb-3"></div>
           </div>
           <div class="image-news-img row">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 ">
               <div class="card mx-auto" style="width: 70%;">
                 <img
                   src="../../../../src/assets/img/report/index-c1.jpg"
@@ -123,7 +123,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 ">
+            <div class="col-lg-4  ">
               <div class="card mx-auto" style="width: 55%;">
                 <img
                   src="../../../../src/assets/img/report/index-c2.png"
@@ -135,7 +135,7 @@
                 </div>
               </div>
             </div>
-            <div class=" col-lg-4 col-md-6">
+            <div class=" col-lg-4 ">
               <div class="card mx-auto" style="width: 80%;">
                 <img
                   src="../../../../src/assets/img/report/index-c5.jpg"
@@ -224,9 +224,11 @@ export default {
   background-image: url(../../../../src/assets/img/report/index1.png);
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 .backimg-two {
   background-image: url(../../../../src/assets/img/report/index2.jpg);
+   background-repeat: no-repeat;
 }
 
 .banner-one h2 {
@@ -295,5 +297,59 @@ export default {
 .btn-hover:hover {
   padding: 3%;
   background-color: #7373b9;
+}
+
+
+@media (max-width:992px){
+
+.dangerWord {
+  color:black !important;
+}
+
+.coupon h3 {
+  font-size: 40px;
+
+}
+
+.banner-four h2 {
+  font-size: 32px;
+
+}
+
+.backimg-one {
+ 
+  background-position:center center;
+}
+.backimg-two {
+ 
+  background-position:center center;
+}
+
+.banner-one h2 {
+  font-size: 36px;
+}
+
+.banner-one p {
+  font-size: 24px;
+}
+
+.banner-two h2 {
+  font-size: 40px;
+}
+
+.banner-two p {
+  font-size: 24px;
+}
+}
+
+@media (max-width:569px){
+
+.banner-one p {
+  font-size: 16px;
+}
+
+.banner-two p {
+  font-size: 16px;
+}
 }
 </style>

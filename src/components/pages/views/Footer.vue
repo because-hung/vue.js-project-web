@@ -31,7 +31,7 @@
               </li>
             </ul>
           </div>
-          <div class="text-right col-md-4 mt-3">
+          <div class="text-md-right col-md-4 mt-3  text-center">
             <div>
               <a href="#"
                 ><img src="../../../../src/assets/img/logo2.png" alt=""

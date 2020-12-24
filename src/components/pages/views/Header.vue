@@ -29,13 +29,58 @@
           <li class="nav-item mx-1">
             <router-link to="/shop" class="nav-link">門市資訊</router-link>
           </li>
+       
         </ul>
       </div>
+<div  class="ham">
+  <b-dropdown id="dropdown" text="Menu"  >
+    <b-dropdown-item>
+    <router-link to="/index" class="nav-link ">
+              首頁
+            </router-link>
+            </b-dropdown-item>
+    <b-dropdown-item>
+    <router-link to="/layout" class="nav-link ">
+              商品列表
+            </router-link>
+            </b-dropdown-item>
+    <b-dropdown-item>
+    <router-link to="/news" class="nav-link">最新活動</router-link>
+    </b-dropdown-item>
+
+    <b-dropdown-item >
+    <router-link to="/aboutus" class="nav-link">關於我們</router-link></b-dropdown-item>
+    <b-dropdown-item ><router-link to="/shop" class="nav-link">門市資訊</router-link></b-dropdown-item>
+
+
+    
+      <b-dropdown-item > <router-link to="/login">
+            <div class="btn btn-outline-primary rounded-circle dashbtn">
+              <i class="fas fa-user-circle"></i>
+              會員登入
+            </div>
+          </router-link></b-dropdown-item>
+    <b-dropdown-item >   <router-link to="/cart">
+          <li class="list-inline-item">
+            <button class="btn btn-outline-primary rounded-circle btn-cart dashbtn">
+              我要結帳
+
+              <i class="fas fa-cart-plus "></i>
+              <span class="badge badge-danger ml-2">{{ cartNumber }}</span>
+            </button>
+          </li>
+        </router-link></b-dropdown-item>
+    
+ 
+  </b-dropdown>
+
+
+</div>
 
       <ul class="list-inline mb-0">
         <li class="list-inline-item">
           <router-link to="/login">
-            <div class="btn btn-outline-primary rounded-circle">
+            <div class="btn btn-outline-primary rounded-circle navbtn">
               <i class="fas fa-user-circle"></i>
               會員登入
             </div>
@@ -44,7 +89,7 @@
 
         <router-link to="/cart">
           <li class="list-inline-item">
-            <button class="btn btn-outline-primary rounded-circle btn-cart">
+            <button class="btn btn-outline-primary rounded-circle btn-cart navbtn">
               我要結帳
 
               <i class="fas fa-cart-plus "></i>
@@ -75,23 +120,23 @@
             class="carousel-item img-one header-carousel-item bg-cover active"
           >
             <div class="carousel-caption  d-none d-md-block px-3">
-              <h3 class="display-4 mb-5 mr-5">
+              <h3 class="display-4 mb-5 mr-5 title">
                 你 ! 還在用化學成分的清潔用品洗身體嗎 ?
               </h3>
             </div>
           </div>
           <div class="carousel-item img-two header-carousel-item bg-cover ">
             <div class="carousel-caption  d-none d-md-block px-3">
-              <h3 class="display-4 mb-2 ">不明成分的沐浴用品</h3>
-              <h3 class="display-4   ">
+              <h3 class="display-4 mb-2 title">不明成分的沐浴用品</h3>
+              <h3 class="display-4  title">
                 造成肌膚和頭皮 癢到不行嗎 ?
               </h3>
             </div>
           </div>
           <div class="carousel-item img-three header-carousel-item bg-cover ">
             <div class="carousel-caption d-none d-md-block px-3">
-              <h3 class="display-4  ">快試試我們天然無添加的產品</h3>
-              <p class="display-4 ">讓你的肌膚和頭皮 受到最溫柔溫和的對待</p>
+              <h3 class="display-4  title">快試試我們天然無添加的產品</h3>
+              <p class="display-4 title">讓你的肌膚和頭皮 受到最溫柔溫和的對待</p>
             </div>
           </div>
           <a
@@ -125,7 +170,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .carousel-item {
   height: 450px;
 }
@@ -163,5 +208,47 @@ export default {
 
 .nav-link:hover {
   color: brown;
+}
+.ham {
+  display:none;
+}
+
+.dashbtn{
+  display:none;
+}
+
+
+
+@media (max-width:992px){
+
+.carousel-item {
+  height: 250px;
+}
+.title{
+    font-size: 24px;
+}
+.ham {
+  display:block;
+
+  padding-right:32%;
+
+}
+
+}
+
+@media (max-width:375px){
+
+.header {
+display:none;
+}
+.navbtn{
+  display:none;
+}
+
+.dashbtn{
+  display:block;
+}
+
+
 }
 </style>

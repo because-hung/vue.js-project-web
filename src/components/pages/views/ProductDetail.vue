@@ -9,7 +9,7 @@
 
     <div class="container">
       <div class="row ">
-        <div class="col-md-5  ">
+        <div class="col-lg-5  order-1 order-lg-0">
           <div class="mt-4">
             <a href="#" class="badge badge-warning p-2">{{
               product.category
@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <div class="col-md-7 ">
+        <div class="col-lg-7 order-0 order-lg-1">
           <img
             class="productImg img-fluid mt-4"
             :src="product.imageUrl"
@@ -107,8 +107,8 @@
 
     <div>
       <div
-        class="container-fluid bg-warning p-3 font-weight-bold text-center mt-5"
-        style="font-size:30px;"
+        class="container-fluid bg-warning p-3 font-weight-bold text-center mt-5 hotProduct"
+       
       >
         買了此商品的人，也買了...
       </div>
@@ -214,5 +214,13 @@ export default {
 
 .product-content {
   font-size: 26px;
+}
+.hotProduct{
+  font-size:30px;
+}
+@media (max-width:375px){
+.hotProduct{
+  font-size:26px;
+}
 }
 </style>

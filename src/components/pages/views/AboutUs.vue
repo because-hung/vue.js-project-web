@@ -53,7 +53,7 @@
         <div class="col-md-6 p-4  order-md-0">
           <div class="about-title p-5 bg-warning" data-aos="fade-down-right">
             <h2>廣受名人好評推薦</h2>
-      
+
             <p class="text-justify mt-3 p-3">
               Slack
               創立於2000年，到至今受到無數人喜愛，各大政商名流，名人也愛用，還沒用過的，趕快買一組試試，絕對一試成主顧，

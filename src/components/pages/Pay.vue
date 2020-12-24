@@ -1,11 +1,11 @@
-<template >
+<template>
   <div>
     <div>
       <Header></Header>
     </div>
 
-    <div class="logo-header mt-5 d-flex justify-content-center " >
-      <img src="../../../src/assets/img/logo2.png" alt="" class="logoImg">
+    <div class="logo-header mt-5 d-flex justify-content-center ">
+      <img src="../../../src/assets/img/logo2.png" alt="" class="logoImg" />
       <h1 class=" text-secondary ml-3">Slack 結帳</h1>
     </div>
 
@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <form class="p-4 mt-4 shadow" @submit.prevent="payOrder" >
+      <form class="p-4 mt-4 shadow" @submit.prevent="payOrder">
         <table class="table">
           <thead>
             <th>品名</th>
@@ -176,17 +176,16 @@ td {
   font-size: 24px;
   font-weight: 700;
 }
-body{
-  overflow-x:hidden !important;
+body {
+  overflow-x: hidden !important;
 }
 
-@media (max-width:375px){
-  .header{
-    flex-direction:column;
+@media (max-width: 375px) {
+  .header {
+    flex-direction: column;
+  }
+  .logoImg {
+    display: none;
+  }
 }
-.logoImg{
-  display:none;
-}
-}
-
 </style>

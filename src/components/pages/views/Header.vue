@@ -29,53 +29,59 @@
           <li class="nav-item mx-1">
             <router-link to="/shop" class="nav-link">門市資訊</router-link>
           </li>
-       
         </ul>
       </div>
-<div  class="ham">
-  <b-dropdown id="dropdown" text="Menu"  >
-    <b-dropdown-item>
-    <router-link to="/index" class="nav-link ">
+      <div class="ham">
+        <b-dropdown id="dropdown" text="Menu">
+          <b-dropdown-item>
+            <router-link to="/index" class="nav-link ">
               首頁
             </router-link>
-            </b-dropdown-item>
-    <b-dropdown-item>
-    <router-link to="/layout" class="nav-link ">
+          </b-dropdown-item>
+          <b-dropdown-item>
+            <router-link to="/layout" class="nav-link ">
               商品列表
             </router-link>
-            </b-dropdown-item>
-    <b-dropdown-item>
-    <router-link to="/news" class="nav-link">最新活動</router-link>
-    </b-dropdown-item>
+          </b-dropdown-item>
+          <b-dropdown-item>
+            <router-link to="/news" class="nav-link">最新活動</router-link>
+          </b-dropdown-item>
 
-    <b-dropdown-item >
-    <router-link to="/aboutus" class="nav-link">關於我們</router-link></b-dropdown-item>
-    <b-dropdown-item ><router-link to="/shop" class="nav-link">門市資訊</router-link></b-dropdown-item>
+          <b-dropdown-item>
+            <router-link to="/aboutus" class="nav-link"
+              >關於我們</router-link
+            ></b-dropdown-item
+          >
+          <b-dropdown-item
+            ><router-link to="/shop" class="nav-link"
+              >門市資訊</router-link
+            ></b-dropdown-item
+          >
 
+          <b-dropdown-item>
+            <router-link to="/login">
+              <div class="btn btn-outline-primary rounded-circle dashbtn">
+                <i class="fas fa-user-circle"></i>
+                會員登入
+              </div>
+            </router-link></b-dropdown-item
+          >
+          <b-dropdown-item>
+            <router-link to="/cart">
+              <li class="list-inline-item">
+                <button
+                  class="btn btn-outline-primary rounded-circle btn-cart dashbtn"
+                >
+                  我要結帳
 
-    
-      <b-dropdown-item > <router-link to="/login">
-            <div class="btn btn-outline-primary rounded-circle dashbtn">
-              <i class="fas fa-user-circle"></i>
-              會員登入
-            </div>
-          </router-link></b-dropdown-item>
-    <b-dropdown-item >   <router-link to="/cart">
-          <li class="list-inline-item">
-            <button class="btn btn-outline-primary rounded-circle btn-cart dashbtn">
-              我要結帳
-
-              <i class="fas fa-cart-plus "></i>
-              <span class="badge badge-danger ml-2">{{ cartNumber }}</span>
-            </button>
-          </li>
-        </router-link></b-dropdown-item>
-    
- 
-  </b-dropdown>
-
-
-</div>
+                  <i class="fas fa-cart-plus "></i>
+                  <span class="badge badge-danger ml-2">{{ cartNumber }}</span>
+                </button>
+              </li>
+            </router-link></b-dropdown-item
+          >
+        </b-dropdown>
+      </div>
 
       <ul class="list-inline mb-0">
         <li class="list-inline-item">
@@ -89,7 +95,9 @@
 
         <router-link to="/cart">
           <li class="list-inline-item">
-            <button class="btn btn-outline-primary rounded-circle btn-cart navbtn">
+            <button
+              class="btn btn-outline-primary rounded-circle btn-cart navbtn"
+            >
               我要結帳
 
               <i class="fas fa-cart-plus "></i>
@@ -136,7 +144,9 @@
           <div class="carousel-item img-three header-carousel-item bg-cover ">
             <div class="carousel-caption d-none d-md-block px-3">
               <h3 class="display-4  title">快試試我們天然無添加的產品</h3>
-              <p class="display-4 title">讓你的肌膚和頭皮 受到最溫柔溫和的對待</p>
+              <p class="display-4 title">
+                讓你的肌膚和頭皮 受到最溫柔溫和的對待
+              </p>
             </div>
           </div>
           <a
@@ -210,45 +220,37 @@ export default {
   color: brown;
 }
 .ham {
-  display:none;
+  display: none;
 }
 
-.dashbtn{
-  display:none;
+.dashbtn {
+  display: none;
 }
 
-
-
-@media (max-width:992px){
-
-.carousel-item {
-  height: 250px;
-}
-.title{
+@media (max-width: 992px) {
+  .carousel-item {
+    height: 250px;
+  }
+  .title {
     font-size: 24px;
-}
-.ham {
-  display:block;
+  }
+  .ham {
+    display: block;
 
-  padding-right:32%;
-
-}
-
+    padding-right: 32%;
+  }
 }
 
-@media (max-width:375px){
+@media (max-width: 375px) {
+  .header {
+    display: none;
+  }
+  .navbtn {
+    display: none;
+  }
 
-.header {
-display:none;
-}
-.navbtn{
-  display:none;
-}
-
-.dashbtn{
-  display:block;
-}
-
-
+  .dashbtn {
+    display: block;
+  }
 }
 </style>

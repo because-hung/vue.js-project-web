@@ -288,12 +288,12 @@ export default {
 </script>
 
 <style scoped>
-
 .num-text {
   max-width: 80px;
 }
-.list-group{
-  position:sticky; top: 10px; 
+.list-group {
+  position: sticky;
+  top: 10px;
 }
 
 .list-group a {
@@ -315,12 +315,9 @@ button:hover {
   padding: 3%;
 }
 
-@media (max-width:375px){
-  .list-group{
-  position:static;
+@media (max-width: 375px) {
+  .list-group {
+    position: static;
+  }
 }
-
-}
-
-
 </style>

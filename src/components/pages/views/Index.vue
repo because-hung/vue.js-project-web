@@ -224,11 +224,10 @@ export default {
   background-image: url(../../../../src/assets/img/report/index1.png);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 .backimg-two {
   background-image: url(../../../../src/assets/img/report/index2.jpg);
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 
 .banner-one h2 {
@@ -299,57 +298,50 @@ export default {
   background-color: #7373b9;
 }
 
+@media (max-width: 992px) {
+  .dangerWord {
+    color: black !important;
+  }
 
-@media (max-width:992px){
+  .coupon h3 {
+    font-size: 40px;
+  }
 
-.dangerWord {
-  color:black !important;
+  .banner-four h2 {
+    font-size: 32px;
+  }
+
+  .backimg-one {
+    background-position: center center;
+  }
+  .backimg-two {
+    background-position: center center;
+  }
+
+  .banner-one h2 {
+    font-size: 36px;
+  }
+
+  .banner-one p {
+    font-size: 24px;
+  }
+
+  .banner-two h2 {
+    font-size: 40px;
+  }
+
+  .banner-two p {
+    font-size: 24px;
+  }
 }
 
-.coupon h3 {
-  font-size: 40px;
+@media (max-width: 569px) {
+  .banner-one p {
+    font-size: 16px;
+  }
 
-}
-
-.banner-four h2 {
-  font-size: 32px;
-
-}
-
-.backimg-one {
- 
-  background-position:center center;
-}
-.backimg-two {
- 
-  background-position:center center;
-}
-
-.banner-one h2 {
-  font-size: 36px;
-}
-
-.banner-one p {
-  font-size: 24px;
-}
-
-.banner-two h2 {
-  font-size: 40px;
-}
-
-.banner-two p {
-  font-size: 24px;
-}
-}
-
-@media (max-width:569px){
-
-.banner-one p {
-  font-size: 16px;
-}
-
-.banner-two p {
-  font-size: 16px;
-}
+  .banner-two p {
+    font-size: 16px;
+  }
 }
 </style>

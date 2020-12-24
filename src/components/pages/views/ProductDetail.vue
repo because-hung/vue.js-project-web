@@ -108,7 +108,6 @@
     <div>
       <div
         class="container-fluid bg-warning p-3 font-weight-bold text-center mt-5 hotProduct"
-       
       >
         買了此商品的人，也買了...
       </div>
@@ -215,12 +214,12 @@ export default {
 .product-content {
   font-size: 26px;
 }
-.hotProduct{
-  font-size:30px;
+.hotProduct {
+  font-size: 30px;
 }
-@media (max-width:375px){
-.hotProduct{
-  font-size:26px;
-}
+@media (max-width: 375px) {
+  .hotProduct {
+    font-size: 26px;
+  }
 }
 </style>

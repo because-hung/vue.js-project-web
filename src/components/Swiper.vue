@@ -64,22 +64,22 @@ export default {
           disableOnInteraction: false,
           delay: 4000
         },
-         breakpoints: {
-            1024: {
+        breakpoints: {
+          1024: {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 20
           },
-        
+
           768: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 20
           },
-        
+
           375: {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 20
           }
-         }
+        }
       }
     };
   },

@@ -13,9 +13,9 @@ import "aos/dist/aos.css";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import swiper, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 import App from "./App.vue";
 import router from "./router";
@@ -31,9 +31,9 @@ Vue.use(VueI18n);
 Vue.use(VueAwesomeSwiper);
 swiper.use([Navigation, Pagination, Autoplay]);
 // Install BootstrapVue
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+Vue.use(IconsPlugin);
 
 Vue.config.productionTip = false;
 axios.defaults.withCredentials = true;

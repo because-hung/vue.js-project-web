@@ -93,7 +93,6 @@ export default {
   background-size: cover;
   background-position: center;
   height: 500px;
-
 }
 
 .title {
@@ -108,12 +107,9 @@ export default {
   font-size: 22px;
 }
 
-@media (max-width:375px){
-
-
-.infomation li {
-  font-size: 18px;
-}
-
+@media (max-width: 375px) {
+  .infomation li {
+    font-size: 18px;
+  }
 }
 </style>

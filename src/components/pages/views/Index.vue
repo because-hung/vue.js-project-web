@@ -35,7 +35,7 @@
                   本公司的產品雖然味道很香，但是請勿把肥皂當食物享用，以上純屬廣告效果
                 </p>
                 <br />
-                <router-link to="layout">
+                <router-link to="product">
                   <a
                     href="#"
                     class="btn btn-hover btn-info mt-5"
@@ -84,7 +84,7 @@
               <br />
 
               <div class="text-right mt-5">
-                <router-link to="layout">
+                <router-link to="product">
                   <a
                     href="#"
                     class="btn btn-hover btn-info text-right"
@@ -175,7 +175,7 @@
             <br />
             <h3 class="text-right mt-5">即日期申辦加入會員 即可享9折優惠</h3>
             <div class="text-right mt-4">
-              <router-link to="layout">
+              <router-link to="product">
                 <a href="#" class="btn btn-info text-right">查看更多商品</a>
               </router-link>
             </div>
@@ -219,7 +219,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .backimg-one {
   background-image: url(../../../../src/assets/img/report/index1.png);
   background-repeat: no-repeat;
@@ -228,65 +228,65 @@ export default {
 .backimg-two {
   background-image: url(../../../../src/assets/img/report/index2.jpg);
   background-repeat: no-repeat;
+  background-position:center;
+    background-size: cover;
 }
 
-.banner-one h2 {
-  font-size: 50px;
+.banner-one{
+  h2 {
+  font-size: 36px;
+}
+  p{
+  font-size: 20px;
+} 
+  
 }
 
-.banner-one p {
-  font-size: 24px;
+.banner-two{
+  h2 {
+  font-size: 36px;
+}
+  p {
+  font-size: 20px;
+} 
+  
 }
 
-.banner-two h2 {
-  font-size: 50px;
-}
-
-.banner-two p {
-  font-size: 24px;
-}
 
 .banner-three h2 {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
 }
 
 .banner-four h2 {
-  font-size: 40px;
-  font-weight: 700;
-}
-
-.coupon h3 {
-  font-size: 60px;
+  font-size: 36px;
   font-weight: 700;
 }
 
 .coupon {
   background-image: url(../../../../src/assets/img/report/us6.jpg);
-
   height: 500px;
+  h3 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
 }
 
 .middle-title-text {
   font-size: 40px;
 }
 
-.image-news img {
+.image-news {
+  img {
   border-radius: 50%;
-}
-
-.image-news .card {
+  }
+  .card {
   border: 0;
+  }
 }
 
-.image-news h4 {
-  font-weight: 600;
-  font-size: 28px;
-}
 
-.image-news p {
-  font-size: 24px;
-}
 
 .line-box {
   width: 20%;
@@ -318,21 +318,28 @@ export default {
     background-position: center center;
   }
 
-  .banner-one h2 {
+  .banner-one {
+    h2 {
     font-size: 36px;
-  }
-
-  .banner-one p {
+   }
+    p {
     font-size: 24px;
   }
-
-  .banner-two h2 {
-    font-size: 40px;
   }
 
-  .banner-two p {
+  
+  .banner-two {
+    h2 {
+    font-size: 36px;
+   }
+    p {
     font-size: 24px;
   }
+  }
+
+
+
+
 }
 
 @media (max-width: 569px) {

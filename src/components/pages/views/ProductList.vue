@@ -54,25 +54,28 @@
           </ul>
         </div>
         <CartAlert></CartAlert>
-        <div class="col-lg-9 pl-0">
+        <div class="col-lg-10 pl-0">
           <loading :active.sync="isLoading"></loading>
           <div class="row mt-4">
             <div
               class="col-lg-4 col-md-6 col-12 mb-4"
+              
               v-for="item in productALL"
               :key="item.id"
             >
               <div class="card border-0 shadow-sm">
+              
                 <div
                   style="height: 350px; background-size: cover; background-position: center"
                   :style="{ backgroundImage: `url(${item.imageUrl})` }"
+                  @click="getProduct(item.id)"
                 ></div>
                 <div class="card-body">
                   <span class="badge badge-secondary float-right ml-2">{{
                     item.category
                   }}</span>
                   <h5 class="card-title">
-                    <a href="#" class="text-dark product-title">{{
+                    <a href="#" class="text-dark product-title"  @click="getProduct(item.id)">{{
                       item.title
                     }}</a>
                   </h5>
@@ -94,7 +97,7 @@
                       <span class="badge badge-danger mr-1 py-2">特價 </span>
                       {{ item.price }} 元
                     </div>
-                    <div class="h4 ml-auto" v-else="item.price">
+                    <div class="h4 ml-auto" v-else>
                       {{ item.price }} 元
                     </div>
                   </div>
@@ -162,7 +165,7 @@ export default {
   methods: {
     searchProduct(searchTitle) {
       const vm = this;
-      console.log(searchTitle);
+      // console.log(searchTitle);
       if (searchTitle == "") {
         this.getProductALL();
       } else {
@@ -172,7 +175,7 @@ export default {
           const searchProduct = response.data.products.filter(item => {
             return item.title.match(searchTitle);
           });
-          console.log(searchProduct);
+          // console.log(searchProduct);
           vm.productALL = searchProduct;
           vm.isLoading = false;
         });
@@ -189,10 +192,13 @@ export default {
         const filterProduct = response.data.products.filter(item => {
           return item.category == currentcategory;
         });
-        console.log(filterProduct);
+        // console.log(filterProduct);
         vm.productALL = filterProduct;
         vm.isLoading = false;
-      });
+
+    });
+
+    
     },
     getProductALL(currentPage = 1) {
       const vm = this;
@@ -201,12 +207,15 @@ export default {
       this.$http.get(url).then(response => {
         vm.productALL = response.data.products;
         vm.pagination = response.data.pagination;
-        console.log(response);
+        // console.log(response);
         vm.isLoading = false;
+      
       });
+  
+
     },
     getProduct(id) {
-      this.$router.push(`/layout/${id}`);
+      this.$router.push(`/product/${id}`);
     },
 
     addtoCart(id, qty = 1) {
@@ -218,7 +227,7 @@ export default {
         qty
       };
       this.$http.post(url, { data: cart }).then(response => {
-        console.log(response);
+        // console.log(response);
         vm.status.loadingItem = "";
         vm.getCart();
         vm.$bus.$emit("cart:message", "加入購物車成功", "success");
@@ -231,7 +240,7 @@ export default {
       this.$http.get(url).then(response => {
         // vm.productALL = response.data.productALL;
         vm.cart = response.data.data;
-        console.log(response);
+        // console.log(response);
         this.$bus.$emit(
           "cart:Number", //傳購物車的數量
           response.data.data.carts.length
@@ -256,7 +265,7 @@ export default {
       this.$validator.validate().then(result => {
         if (result) {
           this.$http.post(url, { data: order }).then(response => {
-            console.log("訂單已建立", response);
+            // console.log("訂單已建立", response);
             if (response.data.success) {
               vm.$router.push(`/customer_checkout/${response.data.orderId}`);
             }
@@ -287,32 +296,32 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .num-text {
   max-width: 80px;
 }
 .list-group {
   position: sticky;
   top: 10px;
-}
-
-.list-group a {
-  font-size: 20px;
-}
-
-.list-group li:hover {
+  a {
+  font-size: 18px;
+  }
+  li:hover {
   background-color: #46a3ff;
   color: white;
+  }
 }
+
+
 .product-title {
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .product-content {
-  font-size: 20px;
+  font-size: 18px;
 }
 button:hover {
-  padding: 3%;
+  padding: 2%;
 }
 
 @media (max-width: 375px) {

@@ -54,7 +54,7 @@ new Vue({
   created() {
     AOS.init({
       offset: 120,
-      once: true,
+      once: true, 
       duration: 2000
     });
   },

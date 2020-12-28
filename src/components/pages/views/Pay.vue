@@ -5,7 +5,7 @@
     </div>
 
     <div class="logo-header mt-5 d-flex justify-content-center ">
-      <img src="../../../src/assets/img/logo2.png" alt="" class="logoImg" />
+      <img src="../../../../src/assets/img/logo2.png" alt="" class="logoImg" />
       <h1 class=" text-secondary ml-3">Slack 結帳</h1>
     </div>
 
@@ -114,8 +114,8 @@
 
 <script>
 import $ from "jquery";
-import Footer from "./views/Footer";
-import Header from "./views/Header";
+import Footer from "./Footer";
+import Header from "./Header";
 export default {
   data() {
     return {
@@ -136,7 +136,7 @@ export default {
       vm.isLoading = true;
       this.$http.get(url).then(response => {
         vm.order = response.data.order;
-        console.log(response);
+        // console.log(response);
         vm.isLoading = false;
       });
     },
@@ -145,7 +145,7 @@ export default {
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`;
       vm.isLoading = true;
       this.$http.post(url).then(response => {
-        console.log(response);
+        // console.log(response);
         if (response.data.success) {
           vm.getOrder();
         }
@@ -156,12 +156,12 @@ export default {
   created() {
     this.orderId = this.$route.params.orderId;
     this.getOrder();
-    console.log(this.orderId);
+    // console.log(this.orderId);
   }
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .header {
   font-size: 20px;
 }

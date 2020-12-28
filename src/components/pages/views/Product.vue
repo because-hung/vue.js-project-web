@@ -36,7 +36,7 @@ export default {
     // 自定義名稱 'messsage:push'
     // message: 傳入參數
     vm.$bus.$on("cart:Number", CartNumber => {
-      console.log(CartNumber);
+      // console.log(CartNumber);
       return (vm.CartNumber = CartNumber);
     });
     // vm.$bus.$emit('messsage:push');

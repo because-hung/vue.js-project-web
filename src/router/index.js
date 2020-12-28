@@ -8,14 +8,14 @@ import Coupon from "@/components/pages/Coupon";
 import Orders from "@/components/pages/Orders";
 import CustomerOrders from "@/components/pages/CustomerOrders";
 import CustomerCheckout from "@/components/pages/CustomerCheckout";
-import Layout from "@/components/pages/views/Layout";
+import Product from "@/components/pages/views/Product";
 import ProductDetail from "@/components/pages/views/ProductDetail";
 import Index from "@/components/pages/views/Index";
 import AboutUs from "@/components/pages/views/AboutUs";
 import News from "@/components/pages/views/News";
 import Shop from "@/components/pages/views/Shop";
-import Cart from "@/components/pages/Cart";
-import Pay from "@/components/pages/Pay";
+import Cart from "@/components/pages/views/Cart";
+import Pay from "@/components/pages/views/Pay";
 
 Vue.use(VueRouter);
 
@@ -23,6 +23,12 @@ const routes = [
   {
     path: "*",
     redirect: "login"
+  },
+
+  {
+    path: "/",
+    name: "Index",
+    component: Index
   },
   // {
   //   path: "/",
@@ -81,21 +87,17 @@ const routes = [
     ]
   },
   {
-    path: "/layout",
-    name: "Layout",
-    component: Layout
+    path: "/product",
+    name: "Product",
+    component: Product
   },
 
   {
-    path: "/layout/:id",
+    path: "/product/:id",
     name: "ProductDetail",
     component: ProductDetail
   },
-  {
-    path: "/index",
-    name: "Index",
-    component: Index
-  },
+  
   {
     path: "/aboutus",
     name: "AboutUs",
@@ -113,7 +115,7 @@ const routes = [
   },
 
   {
-    path: "/",
+    path: "/Dashboard",
     name: "Dashboard",
     component: Dashboard,
     children: [
@@ -132,7 +134,11 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {  //轉頁面 回到最上層
+    // return desired position
+    return { x: 0, y: 0 }
+  }
 });
 
 export default router;

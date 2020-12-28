@@ -8,7 +8,7 @@
 
     <div class="container">
       <div class="logo-header mt-5 d-flex justify-content-center ">
-        <img src="../../../src/assets/img/logo2.png" alt="" class="logoImg" />
+        <img src="../../../../src/assets/img/logo2.png" alt="" class="logoImg" />
         <h1 class=" text-secondary ml-3">Slack 結帳</h1>
       </div>
       <section class="form-row align-items-center text-center mt-5">
@@ -47,8 +47,8 @@
                 <th class="text-right">售價</th>
               </tr>
             </thead>
-            <tbody>
-              <tr v-for="item in cart.carts" :key="item.id" v-if="cart.carts">
+            <tbody v-if="cart.carts">
+              <tr v-for="item in cart.carts" :key="item.id" >
                 <td class="text-right">
                   <button
                     type="button"
@@ -213,8 +213,8 @@
 
 <script>
 import $ from "jquery";
-import Footer from "./views/Footer";
-import Header from "./views/Header";
+import Footer from "./Footer";
+import Header from "./Header";
 
 export default {
   data() {
@@ -259,7 +259,7 @@ export default {
             vm.Sum += response.data.data.carts[i].qty;
           }
         }
-        console.log(response);
+        // console.log(response);
 
         vm.isLoading = false;
         vm.Num = 1;
@@ -272,7 +272,7 @@ export default {
       vm.isLoading = true;
       this.$http.delete(url).then(response => {
         vm.getCart();
-        console.log(response);
+        // console.log(response);
         vm.isLoading = false;
         this.$router.go(0);
       });
@@ -287,7 +287,7 @@ export default {
       this.$http.post(url, { data: coupon }).then(response => {
         vm.getCart();
 
-        console.log(response);
+        // console.log(response);
         vm.isLoading = false;
       });
     },
@@ -299,7 +299,7 @@ export default {
       this.$validator.validate().then(result => {
         if (result) {
           this.$http.post(url, { data: order }).then(response => {
-            console.log("訂單已建立", response);
+            // console.log("訂單已建立", response);
             if (response.data.success) {
               vm.$router.push(`/pay/${response.data.orderId}`);
             }
@@ -307,7 +307,7 @@ export default {
             // vm.isLoading = false;
           });
         } else {
-          console.log("欄位不完整");
+          // console.log("欄位不完整");
         }
       });
     }
@@ -319,7 +319,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .order-img {
   background-position: center center;
   background-size: cover;

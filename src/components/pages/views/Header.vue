@@ -10,13 +10,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link to="/index" class="nav-link">
+            <router-link to="/" class="nav-link">
               首頁
             </router-link>
           </li>
 
           <li class="nav-item mx-1">
-            <router-link to="/layout" class="nav-link">
+            <router-link to="/product" class="nav-link">
               商品列表
             </router-link>
           </li>
@@ -34,12 +34,12 @@
       <div class="ham">
         <b-dropdown id="dropdown" text="Menu">
           <b-dropdown-item>
-            <router-link to="/index" class="nav-link ">
+            <router-link to="/" class="nav-link ">
               首頁
             </router-link>
           </b-dropdown-item>
           <b-dropdown-item>
-            <router-link to="/layout" class="nav-link ">
+            <router-link to="/product" class="nav-link ">
               商品列表
             </router-link>
           </b-dropdown-item>
@@ -60,8 +60,8 @@
 
           <b-dropdown-item>
             <router-link to="/login">
-              <div class="btn btn-outline-primary rounded-circle dashbtn">
-                <i class="fas fa-user-circle"></i>
+              <div class="btn btn-outline-primary  dashbtn">
+                <i class="fas fa-user-circle "></i>
                 會員登入
               </div>
             </router-link></b-dropdown-item
@@ -70,12 +70,12 @@
             <router-link to="/cart">
               <li class="list-inline-item">
                 <button
-                  class="btn btn-outline-primary rounded-circle btn-cart dashbtn"
+                  class="btn btn-outline-primary  btn-cart dashbtn"
                 >
                   我要結帳
 
-                  <i class="fas fa-cart-plus "></i>
-                  <span class="badge badge-danger ml-2">{{ cartNumber }}</span>
+                  <i class="fas fa-cart-plus cartImg "></i>
+                  <span class="badge badge-danger  ml-2 ">{{ cartNumber }}</span>
                 </button>
               </li>
             </router-link></b-dropdown-item
@@ -86,8 +86,8 @@
       <ul class="list-inline mb-0">
         <li class="list-inline-item">
           <router-link to="/login">
-            <div class="btn btn-outline-primary rounded-circle navbtn">
-              <i class="fas fa-user-circle"></i>
+            <div class="btn btn-outline-primary  navbtn ">
+              <i class="fas fa-user-circle "></i>
               會員登入
             </div>
           </router-link>
@@ -96,12 +96,12 @@
         <router-link to="/cart">
           <li class="list-inline-item">
             <button
-              class="btn btn-outline-primary rounded-circle btn-cart navbtn"
+              class="btn btn-outline-primary  btn-cart navbtn "
             >
               我要結帳
 
               <i class="fas fa-cart-plus "></i>
-              <span class="badge badge-danger ml-2">{{ cartNumber }}</span>
+              <span class="badge badge-danger badge-Number ml-2">{{ cartNumber }}</span>
             </button>
           </li>
         </router-link>
@@ -180,7 +180,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .carousel-item {
   height: 450px;
 }
@@ -212,12 +212,12 @@ export default {
   background-size: cover;
 }
 .nav-item:hover {
-  font-size: 24px;
-  background-color: skyblue;
+
+  background-color: #9D9D9D;
 }
 
 .nav-link:hover {
-  color: brown;
+  color: white;
 }
 .ham {
   display: none;
@@ -226,6 +226,18 @@ export default {
 .dashbtn {
   display: none;
 }
+
+.cartImg{
+  position: relative;
+}
+.badge-Number{
+  position:absolute;
+  top:15px;
+  right:17px;
+}
+
+
+
 
 @media (max-width: 992px) {
   .carousel-item {

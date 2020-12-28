@@ -156,7 +156,7 @@ export default {
         vm.product = response.data.product;
 
         $("#productModal").modal("show");
-        console.log(response);
+        // console.log(response);
 
         vm.status.loadingItem = "";
       });
@@ -170,7 +170,7 @@ export default {
         qty
       };
       this.$http.post(url, { data: cart }).then(response => {
-        console.log(response);
+        // console.log(response);
         vm.status.loadingItem = "";
         vm.getCart();
         vm.$bus.$emit("cart:message", "加入購物車成功", "success");
@@ -184,7 +184,7 @@ export default {
       this.$http.get(url).then(response => {
         // vm.productALL = response.data.productALL;
         vm.cart = response.data.data;
-        console.log(response);
+        // console.log(response);
         vm.CartNumber = response.data.data.carts.length;
 
         vm.isLoading = false;
@@ -206,7 +206,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style  lang="scss" scoped>
 .badge {
   width: 60px;
 }

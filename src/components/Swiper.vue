@@ -18,7 +18,7 @@
             item.category
           }}</span>
           <h5 class="card-title">
-            <a href="#" class="text-dark">{{ item.title }}</a>
+            <a href="#" class="text-dark" @click.prevent="getProduct(item.id)">{{ item.title }}</a>
           </h5>
           <p class="card-text">{{ item.description }}</p>
           <div class="d-flex justify-content-between align-items-baseline">
@@ -30,7 +30,7 @@
               <span class="badge badge-danger mr-1 py-2">特價 </span>
               {{ item.price }} 元
             </div>
-            <div class="h3 ml-auto" v-else="item.price">
+            <div class="h3 ml-auto" v-else>
               {{ item.price }} 元
             </div>
           </div>
@@ -54,7 +54,7 @@ export default {
 
       swiperOption: {
         slidesPerView: 4,
-        spaceBetween: 20,
+        spaceBetween: 20,  
         centeredSlides: false,
         pagination: {
           el: ".swiper-pagination",
@@ -89,20 +89,20 @@ export default {
   },
   methods: {
     getProductALL(currentPage = Math.floor(Math.random() * 3) + 1) {
-      console.log(currentPage);
+      // console.log(currentPage);
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products?page=${currentPage}`;
       vm.isLoading = true;
       this.$http.get(url).then(response => {
         vm.productALL = response.data.products;
 
-        console.log(response);
+        // console.log(response);
         vm.isLoading = false;
       });
     },
     getProduct(id) {
-      this.$router.push(`/layout/${id}`);
-      this.$router.go(`/layout/blank`);
+      this.$router.push(`/product/${id}`);
+      this.$router.go(0);
     },
 
     onSwiper(swiper) {

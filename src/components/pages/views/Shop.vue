@@ -86,7 +86,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .banner-img {
   background-image: url(../../../../src/assets/img/report/img15.jpg);
   background-repeat: no-repeat;
@@ -96,12 +96,13 @@ export default {
 }
 
 .title {
-  font-size: 40px;
+  font-size: 36px;
+  .h5 {
+  font-size: 36px;
+ }
 }
 
-.title .h5 {
-  font-size: 40px;
-}
+
 
 .infomation li {
   font-size: 22px;

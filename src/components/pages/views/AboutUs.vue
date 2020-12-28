@@ -86,11 +86,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .about-img-one {
   background-image: url(../../../../src/assets/img/report/img2.jpg);
   background-repeat: no-repeat;
-
   background-position: center;
   height: 600px;
 }
@@ -98,7 +97,6 @@ export default {
 .about-img-two {
   background-image: url(../../../../src/assets/img/report/us2.jpg);
   background-repeat: no-repeat;
-
   background-position: bottom;
   height: 600px;
 }
@@ -106,15 +104,18 @@ export default {
 .about-img-three {
   background-image: url(../../../../src/assets/img/report/us3.jpg);
   background-repeat: no-repeat;
-
   background-position: center;
   height: 600px;
 }
-.about-title h2 {
-  font-size: 44px;
+.about-title {
+  h2{
+  font-size: 36px;
+  }
+  p{
+  font-size: 22px;
 }
 
-.about-title p {
-  font-size: 24px;
 }
+
+
 </style>

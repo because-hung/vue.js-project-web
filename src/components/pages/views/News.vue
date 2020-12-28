@@ -39,7 +39,7 @@
                 <strong class="text-danger"> 88 折優惠 </strong>
               </p>
               <div class="text-right mt-5">
-                <router-link to="layout">
+                <router-link to="product">
                   <a
                     href="#"
                     class="btn btn-warning p-3 font-weight-bold"
@@ -66,7 +66,7 @@
                 竹炭深層潔淨洗面乳，由專業團隊研發而成，竹炭加上奈米的技術，可以把深層的汙垢．角質徹底潔淨乾淨，還給肌膚一個清白，加上強大的抗汗去油的能力
               </p>
 
-              <p class="text-justify mt-5 p-3 ">
+              <p class="text-justify mt-3 p-3 ">
                 根本專為男人而打造的，讓你從阿宅變型男，本產品於下個月就會上市，各大通路都買的到
               </p>
 
@@ -97,7 +97,7 @@
                 周年慶，全館指定商品特價優惠，即日期申辦加入會員，即可再享9折優惠，讓你買到手軟，打折打到骨折
               </p>
               <div class="text-right mt-5">
-                <router-link to="layout">
+                <router-link to="product">
                   <a
                     href="#"
                     class="btn btn-warning p-3 font-weight-bold"
@@ -135,7 +135,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .about-img-one {
   background-image: url(../../../../src/assets/img/report/index2.jpg);
   background-repeat: no-repeat;
@@ -161,24 +161,30 @@ export default {
   height: 600px;
 }
 
-.about-title h2 {
-  font-size: 44px;
+.about-title{
+  h2 {
+  font-size: 36px;
+  }
+  p {
+  font-size: 22px;
+  }
+
 }
 
-.about-title p {
-  font-size: 30px;
-}
 strong {
   line-height: 2;
 }
 
 @media (max-width: 375px) {
-  .about-title h2 {
-    font-size: 32px;
+ .about-title{
+  h2 {
+  font-size: 32px;
+  }
+  p {
+  font-size: 18px;
   }
 
-  .about-title p {
-    font-size: 18px;
-  }
+}
+
 }
 </style>

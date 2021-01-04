@@ -23,6 +23,7 @@ import "./bus";
 import currencyFilter from "./filters/currency";
 import dateFilter from "./filters/date";
 
+Vue.use(VueRouter)
 Vue.use(VueAxios, axios);
 Vue.component("Loading", Loading);
 Vue.filter("date", dateFilter);

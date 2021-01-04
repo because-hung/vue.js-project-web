@@ -75,7 +75,7 @@
                 </td>
                 <td class="text-center">{{ item.qty }}</td>
 
-                <td class="text-right">{{ Math.round(item.final_total) }}</td>
+                <td class="text-right">{{ Math.round(item.final_total) }}</td>  <!-- Math.round -> 四捨五入 -->
               </tr>
             </tbody>
             <tfoot>
@@ -125,11 +125,11 @@
                   class="form-control"
                   name="email"
                   id="useremail"
-                  v-validate="'required|email'"
+                  v-validate="'required|email'"  
                   :class="{ 'is-invalid': errors.has('email') }"
                   v-model="form.user.email"
                   placeholder="請輸入 Email"
-                />
+                />  <!-- required 必填 -->
                 <span class="text-danger" v-if="errors.has('email')">
                   {{ errors.first("email") }}
                 </span>
@@ -274,7 +274,7 @@ export default {
         vm.getCart();
         // console.log(response);
         vm.isLoading = false;
-        this.$router.go(0);
+        this.$router.go(0);  //刷新頁面
       });
     },
     addCouponCode() {

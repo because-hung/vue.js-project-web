@@ -8,7 +8,6 @@
     <!-- Middle -->
 
     <div class="container">
-      <loading :active.sync="isLoading"></loading>
       <div class="row ">
         <div class="col-lg-5  order-1 order-lg-0">
           <div class="mt-4">

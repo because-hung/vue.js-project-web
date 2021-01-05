@@ -105,6 +105,7 @@ export default {
     },
     getProduct(id) {
       this.$router.push(`/product/${id}`);
+
       this.$router.go(0);
     },
 

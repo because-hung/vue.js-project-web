@@ -2,7 +2,11 @@
   <div>
     <loading :active.sync="isLoading"></loading>
     <div class="row mt-4">
-      <div class="col-md-4 mb-4" v-for="item in products" :key="item.id">
+      <div
+        class="col-lg-4 col-md-6 col-12 mb-4"
+        v-for="item in products"
+        :key="item.id"
+      >
         <div class="card border-0 shadow-sm">
           <div
             style="height: 150px; background-size: cover; background-position: center"

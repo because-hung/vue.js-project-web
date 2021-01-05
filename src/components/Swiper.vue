@@ -105,8 +105,6 @@ export default {
     },
     getProduct(id) {
       this.$router.push(`/product/${id}`);
-
-      this.$router.go(0);
     },
 
     onSwiper(swiper) {
@@ -114,6 +112,11 @@ export default {
     },
     onSlideChange() {
       console.log("slide change");
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.$router.go(0);
     }
   },
   created() {

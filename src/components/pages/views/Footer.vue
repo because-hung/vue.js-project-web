@@ -76,11 +76,9 @@ export default {};
 <style lang="scss" scoped>
 .footer {
   background-color: #f8f9fa;
-  .list-group li
-  {
-  background-color: #f8f9fa;
-}
-
+  .list-group li {
+    background-color: #f8f9fa;
+  }
 }
 
 .copright {

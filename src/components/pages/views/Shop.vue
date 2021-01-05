@@ -98,11 +98,9 @@ export default {
 .title {
   font-size: 36px;
   .h5 {
-  font-size: 36px;
- }
+    font-size: 36px;
+  }
 }
-
-
 
 .infomation li {
   font-size: 22px;

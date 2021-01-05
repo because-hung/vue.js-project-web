@@ -161,14 +161,13 @@ export default {
   height: 600px;
 }
 
-.about-title{
+.about-title {
   h2 {
-  font-size: 36px;
+    font-size: 36px;
   }
   p {
-  font-size: 22px;
+    font-size: 22px;
   }
-
 }
 
 strong {
@@ -176,15 +175,13 @@ strong {
 }
 
 @media (max-width: 375px) {
- .about-title{
-  h2 {
-  font-size: 32px;
+  .about-title {
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 18px;
+    }
   }
-  p {
-  font-size: 18px;
-  }
-
-}
-
 }
 </style>

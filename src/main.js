@@ -23,7 +23,7 @@ import "./bus";
 import currencyFilter from "./filters/currency";
 import dateFilter from "./filters/date";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 Vue.component("Loading", Loading);
 Vue.filter("date", dateFilter);
@@ -55,7 +55,7 @@ new Vue({
   created() {
     AOS.init({
       offset: 120,
-      once: true, 
+      once: true,
       duration: 2000
     });
   },

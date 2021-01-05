@@ -97,7 +97,7 @@ const routes = [
     name: "ProductDetail",
     component: ProductDetail
   },
-  
+
   {
     path: "/aboutus",
     name: "AboutUs",
@@ -135,9 +135,10 @@ const routes = [
 
 const router = new VueRouter({
   routes,
-  scrollBehavior (to, from, savedPosition) {  //轉頁面 回到最上層
+  scrollBehavior(to, from, savedPosition) {
+    //轉頁面 回到最上層
     // return desired position
-    return { x: 0, y: 0 }
+    return { x: 0, y: 0 };
   }
 });
 

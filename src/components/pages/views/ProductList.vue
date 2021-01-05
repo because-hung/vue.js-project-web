@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="middle container-fluid p-4 ">
+    <div class="middle container-fluid p-4 board">
       <div class="row">
         <div class="col-lg-2 ">
           <ul class="list-group pl-0 mb-4 mb-lg-0 ">
@@ -44,8 +44,8 @@
                 v-model="searchText"
                 aria-label="Dollar amount (with dot and two decimal places)"
               />
-              <div class="input-group-append">
-                <button @click.prevent="searchProduct(searchText)">
+              <div class="input-group-append  ">
+                <button @click.prevent="searchProduct(searchText)" class="Btn">
                   <i class="fa fa-search " aria-hidden="true"></i>
                 </button>
                 <div></div>
@@ -59,12 +59,10 @@
           <div class="row mt-4">
             <div
               class="col-lg-4 col-md-6 col-12 mb-4"
-              
               v-for="item in productALL"
               :key="item.id"
             >
               <div class="card border-0 shadow-sm">
-              
                 <div
                   style="height: 350px; background-size: cover; background-position: center"
                   :style="{ backgroundImage: `url(${item.imageUrl})` }"
@@ -75,9 +73,12 @@
                     item.category
                   }}</span>
                   <h5 class="card-title">
-                    <a href="#" class="text-dark product-title"  @click="getProduct(item.id)">{{
-                      item.title
-                    }}</a>
+                    <a
+                      href="#"
+                      class="text-dark product-title"
+                      @click="getProduct(item.id)"
+                      >{{ item.title }}</a
+                    >
                   </h5>
                   <p class="card-text product-content">
                     {{ item.description }}
@@ -97,9 +98,7 @@
                       <span class="badge badge-danger mr-1 py-2">特價 </span>
                       {{ item.price }} 元
                     </div>
-                    <div class="h4 ml-auto" v-else>
-                      {{ item.price }} 元
-                    </div>
+                    <div class="h4 ml-auto" v-else>{{ item.price }} 元</div>
                   </div>
                 </div>
                 <div class="card-footer d-flex">
@@ -127,7 +126,7 @@
           </div>
 
           <Pagination
-            class="mt-5"
+            class="mt-5 clickPage"
             :pages="pagination"
             @emitPages="getProductALL"
           ></Pagination>
@@ -150,6 +149,7 @@ export default {
       pagination: {},
       cart: {},
       num: 1,
+      goTop: false,
 
       status: {
         loadingItem: ""
@@ -163,6 +163,9 @@ export default {
     CartAlert
   },
   methods: {
+    reload() {
+      this.$router.go(0);
+    },
     searchProduct(searchTitle) {
       const vm = this;
       // console.log(searchTitle);
@@ -180,9 +183,8 @@ export default {
           vm.isLoading = false;
         });
       }
-    },
-    reload() {
-      this.$router.go(0);
+
+      $("html, body").scrollTop(0);
     },
     getCategory(currentcategory) {
       const vm = this;
@@ -195,10 +197,8 @@ export default {
         // console.log(filterProduct);
         vm.productALL = filterProduct;
         vm.isLoading = false;
-
-    });
-
-    
+        $("html, body").scrollTop(0);
+      });
     },
     getProductALL(currentPage = 1) {
       const vm = this;
@@ -209,11 +209,10 @@ export default {
         vm.pagination = response.data.pagination;
         // console.log(response);
         vm.isLoading = false;
-      
       });
-  
-
+      $("html, body").scrollTop(0); //回到頁面頂端
     },
+
     getProduct(id) {
       this.$router.push(`/product/${id}`);
     },
@@ -304,14 +303,13 @@ export default {
   position: sticky;
   top: 10px;
   a {
-  font-size: 18px;
+    font-size: 18px;
   }
   li:hover {
-  background-color: #46a3ff;
-  color: white;
+    background-color: #46a3ff;
+    color: white;
   }
 }
-
 
 .product-title {
   font-size: 24px;
@@ -320,7 +318,7 @@ export default {
 .product-content {
   font-size: 18px;
 }
-button:hover {
+.btn:hover {
   padding: 2%;
 }
 

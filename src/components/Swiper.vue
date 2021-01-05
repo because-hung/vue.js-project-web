@@ -18,7 +18,12 @@
             item.category
           }}</span>
           <h5 class="card-title">
-            <a href="#" class="text-dark" @click.prevent="getProduct(item.id)">{{ item.title }}</a>
+            <a
+              href="#"
+              class="text-dark"
+              @click.prevent="getProduct(item.id)"
+              >{{ item.title }}</a
+            >
           </h5>
           <p class="card-text">{{ item.description }}</p>
           <div class="d-flex justify-content-between align-items-baseline">
@@ -30,9 +35,7 @@
               <span class="badge badge-danger mr-1 py-2">特價 </span>
               {{ item.price }} 元
             </div>
-            <div class="h3 ml-auto" v-else>
-              {{ item.price }} 元
-            </div>
+            <div class="h3 ml-auto" v-else>{{ item.price }} 元</div>
           </div>
         </div>
       </dl>
@@ -54,7 +57,7 @@ export default {
 
       swiperOption: {
         slidesPerView: 4,
-        spaceBetween: 20,  
+        spaceBetween: 20,
         centeredSlides: false,
         pagination: {
           el: ".swiper-pagination",

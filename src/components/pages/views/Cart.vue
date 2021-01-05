@@ -8,7 +8,11 @@
 
     <div class="container">
       <div class="logo-header mt-5 d-flex justify-content-center ">
-        <img src="../../../../src/assets/img/logo2.png" alt="" class="logoImg" />
+        <img
+          src="../../../../src/assets/img/logo2.png"
+          alt=""
+          class="logoImg"
+        />
         <h1 class=" text-secondary ml-3">Slack 結帳</h1>
       </div>
       <section class="form-row align-items-center text-center mt-5">
@@ -33,11 +37,7 @@
     <div class="middle" style="overflow:hidden;">
       <div class="row ">
         <div class="col-lg-6 col-12 shadow mt-3 product ">
-          <table
-            class="table mt-4 mx-auto"
-            v-if="cart.total >= 1"
-            style="width:85%"
-          >
+          <table class="table mt-4 mx-auto" v-if="cart.total >= 1">
             <thead>
               <tr>
                 <th></th>
@@ -48,7 +48,7 @@
               </tr>
             </thead>
             <tbody v-if="cart.carts">
-              <tr v-for="item in cart.carts" :key="item.id" >
+              <tr v-for="item in cart.carts" :key="item.id">
                 <td class="text-right">
                   <button
                     type="button"
@@ -75,7 +75,8 @@
                 </td>
                 <td class="text-center">{{ item.qty }}</td>
 
-                <td class="text-right">{{ Math.round(item.final_total) }}</td>  <!-- Math.round -> 四捨五入 -->
+                <td class="text-right">{{ Math.round(item.final_total) }}</td>
+                <!-- Math.round -> 四捨五入 -->
               </tr>
             </tbody>
             <tfoot>
@@ -117,7 +118,7 @@
 
         <div class="col-lg-5 col-12 mt-3 shadow ">
           <div class=" row justify-content-center  justify-content-lg-start">
-            <form @submit.prevent="createOrder" style="width:70%;">
+            <form @submit.prevent="createOrder">
               <div class="form-group">
                 <label for="useremail">Email</label>
                 <input
@@ -125,11 +126,12 @@
                   class="form-control"
                   name="email"
                   id="useremail"
-                  v-validate="'required|email'"  
+                  v-validate="'required|email'"
                   :class="{ 'is-invalid': errors.has('email') }"
                   v-model="form.user.email"
                   placeholder="請輸入 Email"
-                />  <!-- required 必填 -->
+                />
+                <!-- required 必填 -->
                 <span class="text-danger" v-if="errors.has('email')">
                   {{ errors.first("email") }}
                 </span>
@@ -274,7 +276,7 @@ export default {
         vm.getCart();
         // console.log(response);
         vm.isLoading = false;
-        this.$router.go(0);  //刷新頁面
+        this.$router.go(0); //刷新頁面
       });
     },
     addCouponCode() {
@@ -320,6 +322,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.table {
+  width: 85%;
+}
 .order-img {
   background-position: center center;
   background-size: cover;
@@ -333,6 +338,7 @@ form {
   padding: 3%;
   border: 3px solid red;
   font-size: 18px;
+  width: 70%;
 }
 
 tr {

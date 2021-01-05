@@ -8,6 +8,7 @@
     <!-- Middle -->
 
     <div class="container">
+      <loading :active.sync="isLoading"></loading>
       <div class="row ">
         <div class="col-lg-5  order-1 order-lg-0">
           <div class="mt-4">
@@ -18,24 +19,19 @@
               <h1 class="h2">{{ product.title }}</h1>
               <div class="d-flex ">
                 <del
-                  class=" font-weight-bold mr-5"
-                  style="font-size:26px;"
+                  class=" font-weight-bold mr-5 og-price"
                   v-if="product.origin_price > 0"
                 >
                   原價 {{ product.origin_price | currency }}</del
                 >
                 <span
-                  class=" text-danger font-weight-bold"
-                  style="font-size:32px;"
+                  class=" text-danger font-weight-bold big-price"
                   v-if="product.origin_price > 0"
                   >現在只要 {{ product.price | currency }}</span
                 >
-                <span
-                  class=" font-weight-bold"
-                  style="font-size:32px;"
-                  v-else
-                  >{{ product.price | currency }}</span
-                >
+                <span class=" font-weight-bold big-price" v-else>{{
+                  product.price | currency
+                }}</span>
               </div>
             </div>
             <hr />
@@ -59,7 +55,7 @@
                 </button>
               </div>
 
-              <div class="text-muted text-nowrap mr-3" style="font-size:22px;">
+              <div class="text-muted text-nowrap mr-3 count-price">
                 小計
                 <strong v-if="num * product.price > 0">{{
                   num * product.price
@@ -206,7 +202,7 @@ export default {
   }
 };
 </script>
-<style  lang="scss" scoped>
+<style lang="scss" scoped>
 .badge {
   width: 60px;
 }
@@ -216,6 +212,18 @@ export default {
 }
 .hotProduct {
   font-size: 30px;
+}
+
+.og-price {
+  font-size: 26px;
+}
+
+.big-price {
+  font-size: 32px;
+}
+
+.count-price {
+  font-size: 22px;
 }
 @media (max-width: 375px) {
   .hotProduct {

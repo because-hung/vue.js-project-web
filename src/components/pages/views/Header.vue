@@ -69,13 +69,13 @@
           <b-dropdown-item>
             <router-link to="/cart">
               <li class="list-inline-item">
-                <button
-                  class="btn btn-outline-primary  btn-cart dashbtn"
-                >
+                <button class="btn btn-outline-primary  btn-cart dashbtn">
                   我要結帳
 
                   <i class="fas fa-cart-plus cartImg "></i>
-                  <span class="badge badge-danger  ml-2 ">{{ cartNumber }}</span>
+                  <span class="badge badge-danger  ml-2 ">{{
+                    cartNumber
+                  }}</span>
                 </button>
               </li>
             </router-link></b-dropdown-item
@@ -95,13 +95,13 @@
 
         <router-link to="/cart">
           <li class="list-inline-item">
-            <button
-              class="btn btn-outline-primary  btn-cart navbtn "
-            >
+            <button class="btn btn-outline-primary  btn-cart navbtn ">
               我要結帳
 
               <i class="fas fa-cart-plus "></i>
-              <span class="badge badge-danger badge-Number ml-2">{{ cartNumber }}</span>
+              <span class="badge badge-danger badge-Number ml-2">{{
+                cartNumber
+              }}</span>
             </button>
           </li>
         </router-link>
@@ -212,8 +212,7 @@ export default {
   background-size: cover;
 }
 .nav-item:hover {
-
-  background-color: #9D9D9D;
+  background-color: #9d9d9d;
 }
 
 .nav-link:hover {
@@ -227,17 +226,14 @@ export default {
   display: none;
 }
 
-.cartImg{
+.cartImg {
   position: relative;
 }
-.badge-Number{
-  position:absolute;
-  top:15px;
-  right:17px;
+.badge-Number {
+  position: absolute;
+  top: 15px;
+  right: 17px;
 }
-
-
-
 
 @media (max-width: 992px) {
   .carousel-item {

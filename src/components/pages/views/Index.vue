@@ -8,16 +8,9 @@
     <!--middle-->
 
     <div>
-      <section
-        class="container-fluid py-5 bg-light banner-one bg-skin"
-        style="position: relative"
-      >
+      <section class="container-fluid py-5 bg-light banner-one bg-skin">
         <div class="row justify-content-end text-lg-dark">
-          <div
-            class="col-lg-5 bg-cover backimg-one"
-            data-aos="flip-left"
-            style="position: absolute; top:0; bottom: 0;"
-          ></div>
+          <div class="col-lg-5 bg-cover backimg-one" data-aos="flip-left"></div>
 
           <div class="container">
             <div class="row ">
@@ -48,18 +41,11 @@
           </div>
         </div>
       </section>
-      <section
-        class="container-fluid py-5 bg-light banner-two bg-skin "
-        style="position: relative;"
-      >
+      <section class="container-fluid py-5 bg-light banner-two bg-skin ">
         <div class="row">
           <div
             class="col-lg-5 bg-cover backimg-two "
             data-aos="flip-left"
-            style="
-        position: absolute;top:0;bottom: 0;
-
-        "
           ></div>
         </div>
         <div class="container">
@@ -112,7 +98,7 @@
           </div>
           <div class="image-news-img row">
             <div class="col-lg-4 ">
-              <div class="card mx-auto" style="width: 70%;">
+              <div class="card mx-auto food">
                 <img
                   src="../../../../src/assets/img/report/index-c1.jpg"
                   class="card-img-top p-4"
@@ -124,7 +110,7 @@
               </div>
             </div>
             <div class="col-lg-4  ">
-              <div class="card mx-auto" style="width: 55%;">
+              <div class="card mx-auto chemical">
                 <img
                   src="../../../../src/assets/img/report/index-c2.png"
                   class="card-img-top p-4"
@@ -136,7 +122,7 @@
               </div>
             </div>
             <div class=" col-lg-4 ">
-              <div class="card mx-auto" style="width: 80%;">
+              <div class="card mx-auto doctor">
                 <img
                   src="../../../../src/assets/img/report/index-c5.jpg"
                   class="card-img-top p-4"
@@ -186,8 +172,7 @@
 
     <div>
       <div
-        class="container-fluid bg-danger text-white p-3 font-weight-bold text-center "
-        style="font-size:30px;"
+        class="container-fluid hotProduct bg-danger text-white p-3 font-weight-bold text-center "
         data-aos="zoom-up"
       >
         熱門精選商品
@@ -220,38 +205,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.banner-one {
+  position: relative;
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
 .backimg-one {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   background-image: url(../../../../src/assets/img/report/index1.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.banner-two {
+  position: relative;
+  h2 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
 .backimg-two {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   background-image: url(../../../../src/assets/img/report/index2.jpg);
   background-repeat: no-repeat;
-  background-position:center;
-    background-size: cover;
+  background-position: center;
+  background-size: cover;
 }
-
-.banner-one{
-  h2 {
-  font-size: 36px;
-}
-  p{
-  font-size: 20px;
-} 
-  
-}
-
-.banner-two{
-  h2 {
-  font-size: 36px;
-}
-  p {
-  font-size: 20px;
-} 
-  
-}
-
 
 .banner-three h2 {
   font-size: 36px;
@@ -267,10 +256,9 @@ export default {
   background-image: url(../../../../src/assets/img/report/us6.jpg);
   height: 500px;
   h3 {
-  font-size: 48px;
-  font-weight: 700;
-}
-
+    font-size: 48px;
+    font-weight: 700;
+  }
 }
 
 .middle-title-text {
@@ -279,14 +267,23 @@ export default {
 
 .image-news {
   img {
-  border-radius: 50%;
+    border-radius: 50%;
   }
   .card {
-  border: 0;
+    border: 0;
   }
 }
 
+.food {
+  width: 70%;
+}
 
+.chemical {
+  width: 55%;
+}
+.doctor {
+  width: 80%;
+}
 
 .line-box {
   width: 20%;
@@ -296,6 +293,10 @@ export default {
 .btn-hover:hover {
   padding: 3%;
   background-color: #7373b9;
+}
+
+.hotProduct {
+  font-size: 30px;
 }
 
 @media (max-width: 992px) {
@@ -320,26 +321,21 @@ export default {
 
   .banner-one {
     h2 {
-    font-size: 36px;
-   }
+      font-size: 36px;
+    }
     p {
-    font-size: 24px;
-  }
+      font-size: 24px;
+    }
   }
 
-  
   .banner-two {
     h2 {
-    font-size: 36px;
-   }
+      font-size: 36px;
+    }
     p {
-    font-size: 24px;
+      font-size: 24px;
+    }
   }
-  }
-
-
-
-
 }
 
 @media (max-width: 569px) {

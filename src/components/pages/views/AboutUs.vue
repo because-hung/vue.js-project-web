@@ -108,14 +108,11 @@ export default {
   height: 600px;
 }
 .about-title {
-  h2{
-  font-size: 36px;
+  h2 {
+    font-size: 36px;
   }
-  p{
-  font-size: 22px;
+  p {
+    font-size: 22px;
+  }
 }
-
-}
-
-
 </style>

@@ -91,7 +91,7 @@
           </div>
         </div>
 
-        <div class="col-lg-7 order-0 order-lg-1">
+        <div class="col-lg-7 text-center order-0 order-lg-1 ">
           <img
             class="productImg img-fluid mt-4"
             :src="product.imageUrl"
@@ -209,6 +209,10 @@ export default {
 
 .product-content {
   font-size: 26px;
+}
+.productImg {
+  max-height: 600px;
+ background-size:cover ;
 }
 .hotProduct {
   font-size: 30px;

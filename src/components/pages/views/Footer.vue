@@ -51,7 +51,7 @@
                 <i class="fab fa-line fa-2x"></i>
               </li>
               <li class="list-inline-item">
-                <a href="https://github.com/because-hung">
+                <a href="https://github.com/because-hung/vue.js-project-web">
                   <i class="fab fa-github fa-2x"></i>
                 </a>
               </li>

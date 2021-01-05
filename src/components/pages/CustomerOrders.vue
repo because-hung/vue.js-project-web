@@ -27,9 +27,7 @@
                 <span class="badge badge-danger mr-1 py-2">特價 </span>
                 {{ item.price }} 元
               </div>
-              <div class="h4 ml-auto" v-else="item.price">
-                {{ item.price }} 元
-              </div>
+              <div class="h4 ml-auto" v-else>{{ item.price }} 元</div>
             </div>
           </div>
           <div class="card-footer d-flex">
@@ -137,8 +135,8 @@
             <th class="text-right">售價</th>
           </tr>
         </thead>
-        <tbody>
-          <tr v-for="item in cart.carts" :key="item.id" v-if="cart.carts">
+        <tbody v-if="cart.carts">
+          <tr v-for="item in cart.carts" :key="item.id">
             <td>
               <button
                 type="button"
@@ -184,7 +182,7 @@
         />
         <div class="input-group-append ">
           <button
-            class="btn btn-outline-secondary"
+            class="btn btn-outline-secondary "
             type="button"
             @click="addCouponCode"
           >
@@ -397,7 +395,7 @@ export default {
           this.$http.post(url, { data: order }).then(response => {
             console.log("訂單已建立", response);
             if (response.data.success) {
-              vm.$router.push(`/pay/${response.data.orderId}`);
+              vm.$router.push(`customer_checkout/${response.data.orderId}`);
             }
             // vm.getCart();
             // vm.isLoading = false;

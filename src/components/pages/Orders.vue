@@ -5,21 +5,22 @@
       <thead>
         <tr>
           <th>購買時間</th>
-          <th>Email</th>
+          <th class="hidden">Email</th>
           <th>購買款項</th>
           <th>應付金額</th>
           <th>是否付款</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody v-if="orders.length">
         <tr
           v-for="(item, key) in sortOrder"
           :key="key"
-          v-if="orders.length"
           :class="{ 'text-secondary': !item.is_paid }"
         >
           <td>{{ item.create_at | date }}</td>
-          <td><span v-text="item.user.email" v-if="item.user"></span></td>
+          <td class="hidden">
+            <span v-text="item.user.email" v-if="item.user"></span>
+          </td>
           <td>
             <ul class="list-unstyled">
               <li v-for="(product, i) in item.products" :key="i">
@@ -88,3 +89,10 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+@media (max-width: 414px) {
+  .hidden {
+    display: none;
+  }
+}
+</style>

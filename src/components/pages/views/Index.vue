@@ -10,11 +10,14 @@
     <div>
       <section class="container-fluid py-5 bg-light banner-one bg-skin">
         <div class="row justify-content-end text-lg-dark">
-          <div class="col-lg-5 bg-cover backimg-one" data-aos="flip-left"></div>
+          <div
+            class="col-lg-5  bg-cover backimg-one"
+            data-aos="flip-left"
+          ></div>
 
           <div class="container">
             <div class="row ">
-              <div class="col-lg-7 content-one " data-aos="fade-up">
+              <div class="col-lg-7  content-one " data-aos="fade-up">
                 <h2>什麼！！！ 別鬧吧！</h2>
 
                 <h2>肥皂可以吃！？</h2>
@@ -157,9 +160,11 @@
           <div class="bg-lighter p-3">
             <h3 class="mt-2">看過來看過來 價錢打折 買到骨折</h3>
             <br />
-            <h3 class="text-center mt-2">Slack 周年慶 全館指定商品 特價優惠</h3>
+            <h3 class="text-md-center mt-2">
+              Slack 周年慶 全館指定商品 特價優惠
+            </h3>
             <br />
-            <h3 class="text-right mt-5">即日期申辦加入會員 即可享9折優惠</h3>
+            <h3 class="text-md-right mt-5">即日期申辦加入會員 即可享9折優惠</h3>
             <div class="text-right mt-4">
               <router-link to="product">
                 <a href="#" class="btn btn-info text-right">查看更多商品</a>
@@ -345,6 +350,9 @@ export default {
 
   .banner-two p {
     font-size: 16px;
+  }
+  .coupon h3 {
+    font-size: 32px;
   }
 }
 </style>

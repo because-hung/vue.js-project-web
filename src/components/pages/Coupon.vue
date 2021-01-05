@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="text-right">
-      <button class="btn btn-primary" @click="openCouponModal(true)">
+      <button class="btn btn-primary mt-3" @click="openCouponModal(true)">
         建立新的優惠券
       </button>
     </div>

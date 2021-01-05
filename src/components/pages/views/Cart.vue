@@ -356,7 +356,7 @@ td {
   margin-right: 8%;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .product {
     margin-left: 0;
   }

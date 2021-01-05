@@ -322,7 +322,7 @@ export default {
   padding: 2%;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .list-group {
     position: static;
   }

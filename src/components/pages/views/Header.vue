@@ -249,7 +249,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .header {
     display: none;
   }

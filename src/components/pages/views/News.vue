@@ -174,7 +174,7 @@ strong {
   line-height: 2;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .about-title {
     h2 {
       font-size: 32px;

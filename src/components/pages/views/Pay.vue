@@ -180,7 +180,7 @@ body {
   overflow-x: hidden !important;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .header {
     flex-direction: column;
   }

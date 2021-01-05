@@ -106,7 +106,7 @@ export default {
   font-size: 22px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .infomation li {
     font-size: 18px;
   }

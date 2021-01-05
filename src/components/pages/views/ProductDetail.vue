@@ -212,7 +212,7 @@ export default {
 }
 .productImg {
   max-height: 600px;
- background-size:cover ;
+  background-size: cover;
 }
 .hotProduct {
   font-size: 30px;
@@ -229,7 +229,7 @@ export default {
 .count-price {
   font-size: 22px;
 }
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .hotProduct {
     font-size: 26px;
   }

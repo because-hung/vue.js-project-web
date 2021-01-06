@@ -51,6 +51,12 @@ Vue.use(VeeValidate, {
   }
 });
 
+//處理 admin/products 路徑錯誤
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err);
+};
+
 new Vue({
   created() {
     AOS.init({

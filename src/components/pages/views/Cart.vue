@@ -7,6 +7,7 @@
     <!--cart-->
 
     <div class="container">
+      <loading :active.sync="isLoading"></loading>
       <div class="logo-header mt-5 d-flex justify-content-center ">
         <img
           src="../../../../src/assets/img/logo2.png"

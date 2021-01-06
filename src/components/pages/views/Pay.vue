@@ -5,6 +5,7 @@
     </div>
 
     <div class="logo-header mt-5 d-flex justify-content-center ">
+      <loading :active.sync="isLoading"></loading>
       <img src="../../../../src/assets/img/logo2.png" alt="" class="logoImg" />
       <h1 class=" text-secondary ml-3">Slack 結帳</h1>
     </div>

@@ -22,6 +22,7 @@ import router from "./router";
 import "./bus";
 import currencyFilter from "./filters/currency";
 import dateFilter from "./filters/date";
+import LazyRender from "vue-lazy-render";
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -35,6 +36,7 @@ swiper.use([Navigation, Pagination, Autoplay]);
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
+Vue.use(LazyRender);
 
 Vue.config.productionTip = false;
 axios.defaults.withCredentials = true;

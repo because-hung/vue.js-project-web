@@ -104,12 +104,12 @@ export default {
       });
     },
     getProduct(id) {
-      if (id == this.$route.params.id) {  
+      if (id == this.$route.params.id) {
         this.$router.go(0);
       } else {
         this.$router.push(`/product/${id}`);
       }
-     },
+    },
 
     onSwiper(swiper) {
       console.log(swiper);

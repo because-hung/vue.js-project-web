@@ -62,7 +62,7 @@
               v-for="item in productALL"
               :key="item.id"
             >
-              <div class="card border-0 shadow-sm">
+              <div class="card h-100 border-0 shadow-sm">
                 <div
                   style="height: 350px; background-size: cover; background-position: center"
                   :style="{ backgroundImage: `url(${item.imageUrl})` }"

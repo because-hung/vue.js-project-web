@@ -3,9 +3,11 @@
     <!--header-->
 
     <nav class="navbar navbar-expand-lg bg-light">
-      <a class="navbar-brand" href="#" data-aos="zoom-out"
-        ><img src="../../../../src/assets/img/logo3.png" alt=""
-      /></a>
+      <router-link to="/">
+        <a class="navbar-brand" href="#" data-aos="zoom-out"
+          ><img src="../../../../src/assets/img/logo3.png" alt=""
+        /></a>
+      </router-link>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -260,8 +262,8 @@ export default {
   }
   .ham {
     display: block;
-
-    padding-right: 32%;
+    position: absolute;
+    left: 140px;
   }
 }
 

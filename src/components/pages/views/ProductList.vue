@@ -240,10 +240,7 @@ export default {
         // vm.productALL = response.data.productALL;
         vm.cart = response.data.data;
         // console.log(response);
-        this.$bus.$emit(
-          "cart:Number", //傳購物車的數量
-          response.data.data.carts.length
-        );
+        this.$bus.$emit("getcart"); //傳購物車的數量
 
         vm.isLoading = false;
       });
@@ -252,7 +249,6 @@ export default {
       this.num += 1;
     },
     minusNum() {
-      // eslint-disable-next-line no-unused-expressions
       this.num > 1 ? (this.num -= 1) : (this.num = 1);
     },
 
@@ -281,16 +277,6 @@ export default {
   created() {
     this.getProductALL();
     this.getCart();
-
-    // vm.$bus.$emit('messsage:push');
-
-    //    this.$bus.$on("IndexCategory", Category => {
-    // this.getCategory(Category);
-    // console.log('bus:'+Category);
-
-    // });
-
-    //  this.$bus.$emit('messsage:push','這是一段訊息','success');
   }
 };
 </script>

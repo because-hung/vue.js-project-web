@@ -73,9 +73,7 @@
                   我要結帳
 
                   <i class="fas fa-cart-plus cartImg "></i>
-                  <span class="badge badge-danger  ml-2 ">{{
-                    cartNumber
-                  }}</span>
+                  <span class="badge badge-danger  ml-2 ">{{ Cart }}</span>
                 </button>
               </li>
             </router-link></b-dropdown-item
@@ -100,7 +98,7 @@
 
               <i class="fas fa-cart-plus "></i>
               <span class="badge badge-danger badge-Number ml-2">{{
-                cartNumber
+                Cart
               }}</span>
             </button>
           </li>
@@ -174,9 +172,27 @@
 </template>
 <script>
 export default {
-  props: ["cartNumber"],
   data() {
-    return {};
+    return {
+      Cart: 0
+    };
+  },
+  methods: {
+    getCart() {
+      const vm = this;
+      const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
+
+      this.$http.get(url).then(response => {
+        vm.Cart = response.data.data.carts.length;
+        //  console.log(vm.Cart);
+      });
+    }
+  },
+  created() {
+    this.getCart();
+    this.$bus.$on("getcart", () => {
+      this.getCart();
+    });
   }
 };
 </script>

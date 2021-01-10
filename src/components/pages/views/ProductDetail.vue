@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <Header :cartNumber="CartNumber"></Header>
+      <Header></Header>
     </div>
     <CartAlert></CartAlert>
 
@@ -181,7 +181,7 @@ export default {
         // vm.productALL = response.data.productALL;
         vm.cart = response.data.data;
         // console.log(response);
-        vm.CartNumber = response.data.data.carts.length;
+        this.$bus.$emit("getcart"); //傳購物車的數量
 
         vm.isLoading = false;
       });

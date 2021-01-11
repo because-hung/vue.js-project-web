@@ -37,33 +37,47 @@
               <hr />
 
               <div class="footer mt-5 d-flex justify-content-between ">
-                <div
-                  class="btn-group border border-secondary mr-2 selectNum"
-                  role="group"
-                >
-                  <button type="button" class="btn btn-white" @click="minusNum">
-                    -
-                  </button>
-                  <input
-                    type="text"
-                    class="btn btn-white num-text "
-                    v-model.number="num"
-                  />
-                  <span class="mt-2">{{ product.unit }}</span>
-                  <button type="button" class="btn btn-white" @click="plusNum">
-                    +
-                  </button>
-                </div>
+                <div class="row">
+                  <div class="col-md-8 col-12 text-center">
+                    <div
+                      class="btn-group border border-secondary mr-2 selectNum"
+                      role="group"
+                    >
+                      <button
+                        type="button"
+                        class="btn btn-white"
+                        @click="minusNum"
+                      >
+                        -
+                      </button>
+                      <input
+                        type="text"
+                        class="btn btn-white num-text "
+                        v-model.number="num"
+                      />
+                      <span class="mt-2">{{ product.unit }}</span>
+                      <button
+                        type="button"
+                        class="btn btn-white"
+                        @click="plusNum"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
 
-                <div class="text-muted text-nowrap mr-3 count-price">
-                  小計
-                  <strong v-if="num * product.price > 0">{{
-                    num * product.price
-                  }}</strong>
-                  元
+                  <div class="col-md-4 mt-4 mt-md-0 text-center">
+                    <div class="text-muted text-nowrap mr-3 count-price">
+                      小計
+                      <strong v-if="num * product.price > 0">{{
+                        num * product.price
+                      }}</strong>
+                      元
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="mt-5 text-right ">
+              <div class="mt-md-5 mt-3 text-right ">
                 <button
                   type="button"
                   class="btn btn-primary p-3"

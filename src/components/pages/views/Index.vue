@@ -204,8 +204,11 @@ export default {
   components: {
     Footer,
     Header,
-    Swiper
-  }
+    Swiper,
+  },
+  created() {
+    document.title = "slack - 照顧你的每一寸肌膚";
+  },
 };
 </script>
 

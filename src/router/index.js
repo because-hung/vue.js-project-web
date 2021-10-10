@@ -28,7 +28,10 @@ const routes = [
   {
     path: "/",
     name: "Index",
-    component: Index
+    component: Index,
+    meta:{
+      title:"slack 照顧你每一寸肌膚"
+    }
   },
   // {
   //   path: "/",

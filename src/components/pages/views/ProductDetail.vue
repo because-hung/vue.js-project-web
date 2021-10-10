@@ -6,7 +6,6 @@
     <CartAlert></CartAlert>
 
     <!-- Middle -->
-    <lazy-render>
       <div class="container">
         <div class="row ">
           <loading :active.sync="isLoading"></loading>
@@ -116,7 +115,6 @@
           </div>
         </div>
       </div>
-    </lazy-render>
     <div>
       <div
         class="container-fluid bg-warning p-3 font-weight-bold text-center mt-5 hotProduct"

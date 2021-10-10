@@ -172,7 +172,7 @@ export default {
       if (searchTitle == "") {
         this.getProductALL();
       } else {
-        const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
+        const url = `${process.env.VUE_APP_APIPATH}/api/${proccess.env.VUE_APP_CUSTOMPATH}/products/all`;
         vm.isLoading = true;
         this.$http.get(url).then(response => {
           const searchProduct = response.data.products.filter(item => {
@@ -190,7 +190,7 @@ export default {
       const vm = this;
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products/all`;
       vm.isLoading = true;
-      this.$http.get(url).then(response => {
+      this.$http.get(url).then(response => { 
         const filterProduct = response.data.products.filter(item => {
           return item.category == currentcategory;
         });

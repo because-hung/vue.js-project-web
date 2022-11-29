@@ -14,6 +14,8 @@
 + 串接 Restful Api
 + Aos 動畫套件
 
+<br />
+
 > 作品網址
 
 https://because-hung.github.io/vue.js-project-web/#/
@@ -28,19 +30,51 @@ https://because-hung.github.io/vue.js-project-web/#/
 
 ![web-index](https://user-images.githubusercontent.com/63777618/204410987-29dd0f94-aa2f-4ccf-85d2-03a19453a604.png)
 
-商品列表 --各項產品
+<br />
 
-最新活動 --產品活動頁--優惠訊息
++ 商品列表 --各項產品
 
-關於我們 --品牌故事文化
+![web-product](https://user-images.githubusercontent.com/63777618/204411051-2afa3550-e2a7-483c-ae94-97f7d81e8d0d.png)
 
-門市資訊 --店家資訊
+<br />
 
-會員登入 --進入後台 做產品管理
++ 我要結帳 --有建立購物車的功能 可以下訂單到後台
 
-我要結帳 --有建立購物車的功能 可以下訂單到後台
+![web-cart](https://user-images.githubusercontent.com/63777618/204411189-38b753b2-a9be-4068-83af-a5e0dd258488.png)
 
-*** ***功能介紹*** ***
+
+<br />
+
++ 最新活動 --產品活動頁--優惠訊息
+
+
+![web-activity](https://user-images.githubusercontent.com/63777618/204411236-424440b6-2ca0-4584-9670-7c71c135aaab.png)
+
+
+<br />
+
++ 關於我們 --品牌故事文化
+
+![web-aboutUs](https://user-images.githubusercontent.com/63777618/204411262-c74a30f7-8e62-4938-83e0-c54644304c08.png)
+
+
+<br />
+
++ 門市資訊 --店家資訊
+
+![web-store](https://user-images.githubusercontent.com/63777618/204411273-24681c0c-6c71-4fd1-bbf2-c9a81ac2c10d.png)
+
+
+<br />
+
++ 會員登入 --進入後台 做產品管理
+
+![covid-dashboard](https://user-images.githubusercontent.com/63777618/204411327-a41d56ab-cb06-422c-92f6-ceaa68e069ed.png)
+
+<br />
+
+
+> 功能介紹
 
 ** 前台 **
 

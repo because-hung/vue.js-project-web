@@ -69,7 +69,7 @@ https://because-hung.github.io/vue.js-project-web/#/
 
 + 後台 - 首頁 --做商品新增刪除，處理訂單，新增優惠卷折扣等功能 - (進入後台需會員登入)
 
-![covid-dashboard](https://user-images.githubusercontent.com/63777618/204411327-a41d56ab-cb06-422c-92f6-ceaa68e069ed.png)
+![dashboard](https://user-images.githubusercontent.com/63777618/204413538-7a592dc7-382b-4f48-bd92-fec08f38da74.png)
 
 <br />
 

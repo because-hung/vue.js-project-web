@@ -38,14 +38,14 @@ https://because-hung.github.io/vue.js-project-web/#/
 
 <br />
 
-+ 購物車 --選購完想要的東西後，就可以去結帳了，結帳後訂單資訊會被送到後台
++ 購物車 --選購完想要的東西後，就可以去結帳了，結帳可以輸入優惠卷號碼，享有優惠折扣，結帳後訂單資訊會被送到後台
 
 ![web-cart](https://user-images.githubusercontent.com/63777618/204411189-38b753b2-a9be-4068-83af-a5e0dd258488.png)
 
 
 <br />
 
-+ 最新活動 --商品活動頁面，有商品優惠的資訊
++ 最新活動 --活動頁面，有商品優惠的資訊
 
 
 ![web-activity](https://user-images.githubusercontent.com/63777618/204411236-424440b6-2ca0-4584-9670-7c71c135aaab.png)

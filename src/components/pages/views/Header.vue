@@ -111,7 +111,7 @@
     <div class="header">
       <div
         id="carouselExampleIndicators"
-        class="carousel slide"
+        class="carousel slide d-none d-sm-block"
         data-ride="carousel"
       >
         <ol class="carousel-indicators">
@@ -127,14 +127,14 @@
           <div
             class="carousel-item img-one header-carousel-item bg-cover active"
           >
-            <div class="carousel-caption  d-none d-md-block px-3">
+            <div class="carousel-caption  d-none d-sm-block px-3">
               <h3 class="display-4 mb-5 mr-5 title">
                 你 ! 還在用化學成分的清潔用品洗身體嗎 ?
               </h3>
             </div>
           </div>
           <div class="carousel-item img-two header-carousel-item bg-cover ">
-            <div class="carousel-caption  d-none d-md-block px-3">
+            <div class="carousel-caption  d-none d-sm-block px-3">
               <h3 class="display-4 mb-2 title">不明成分的沐浴用品</h3>
               <h3 class="display-4  title">
                 造成肌膚和頭皮 癢到不行嗎 ?
@@ -142,7 +142,7 @@
             </div>
           </div>
           <div class="carousel-item img-three header-carousel-item bg-cover ">
-            <div class="carousel-caption d-none d-md-block px-3">
+            <div class="carousel-caption d-none d-sm-block px-3">
               <h3 class="display-4  title">快試試我們天然無添加的產品</h3>
               <p class="display-4 title">
                 讓你的肌膚和頭皮 受到最溫柔溫和的對待

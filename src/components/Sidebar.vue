@@ -2,27 +2,27 @@
   <div>
     <div class="container pl-5">
       <ul class="list-group d-md-none d-block">
-        <li class="list-group-item ">
+        <li class="list-group-item">
           <router-link to="/admin/products" class="nav-link">
             <i class="fas fa-box-open"></i> 產品列表
           </router-link>
         </li>
-        <li class="list-group-item ">
+        <li class="list-group-item">
           <router-link to="/admin/orders" class="nav-link">
             <i class="far fa-list-alt"></i> 訂單列表
           </router-link>
         </li>
-        <li class="list-group-item ">
+        <li class="list-group-item">
           <router-link to="/admin/coupon" class="nav-link">
             <i class="far fa-list-alt"></i> 優惠卷
           </router-link>
         </li>
-        <li class="list-group-item ">
+        <li class="list-group-item">
           <router-link to="/Dashboard/customer_order" class="nav-link">
             <i class="far fa-list-alt"></i> 模擬訂單
           </router-link>
         </li>
-        <li class="list-group-item ">
+        <li class="list-group-item">
           <router-link to="/" class="nav-link">
             <i class="far fa-list-alt"></i> 前台
           </router-link>
@@ -93,8 +93,10 @@
 <style lang="scss" scoped>
 .list-group {
   margin-top: 110px;
+  display: flex;
+  justify-content: center;
   li {
-    width: 320px;
+    width: 85vw;
   }
 }
 </style>

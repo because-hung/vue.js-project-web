@@ -8,80 +8,73 @@
     <!--middle-->
 
     <div>
-      <section class="container-fluid py-5 bg-light banner-one bg-skin">
-        <div class="row justify-content-end text-lg-dark">
+      <section class="container-fluid bg-light banner-one bg-skin">
+        <div class="row text-lg-dark px-lg-5">
           <div
-            class="col-lg-5  bg-cover backimg-one"
+            class="col-12 col-lg-7 order-2 order-lg-1 pt-sm-5 d-flex flex-column justify-content-center content-one px-sm-5 pb-4"
+            data-aos="fade-up"
+          >
+            <h2>什麼！！！ 肥皂居然可以吃！？</h2>
+            <br />
+            <p class="text-justify">
+              Slack
+              專業團隊使用天然食品級的原料成份，不添加任何化學物質，生產出對肌膚.頭皮最好的清潔用品，經專業醫生
+              團隊改良及證明，產品對保濕.清潔.治療敏感性肌膚與頭皮　，十分有效
+            </p>
+            <p class="text-danger font-weight-bolder dangerWord">
+              本公司的產品雖然味道很香，但是請勿把肥皂當食物享用，以上純屬廣告效果
+            </p>
+            <br />
+            <router-link to="product">
+              <a
+                href="#"
+                class="btn btn-hover btn-info mt-5"
+                data-aos="fade-down-left"
+                >查看更多商品</a
+              >
+            </router-link>
+          </div>
+          <div
+            class="col-12 col-lg-5 order-1 order-lg-2 bg-cover backimg-one"
             data-aos="flip-left"
           ></div>
-
-          <div class="container">
-            <div class="row ">
-              <div class="col-lg-7  content-one " data-aos="fade-up">
-                <h2>什麼！！！ 別鬧吧！</h2>
-
-                <h2>肥皂可以吃！？</h2>
-                <br />
-                <p class="text-justify">
-                  Slack
-                  專業團隊使用天然食品級的原料成份，不添加任何化學物質，生產出對肌膚.頭皮最好的清潔用品，經專業醫生
-                  團隊改良及證明，產品對保濕.清潔.治療敏感性肌膚與頭皮　，十分有效
-                </p>
-                <p class="text-danger font-weight-bolder dangerWord">
-                  本公司的產品雖然味道很香，但是請勿把肥皂當食物享用，以上純屬廣告效果
-                </p>
-                <br />
-                <router-link to="product">
-                  <a
-                    href="#"
-                    class="btn btn-hover btn-info mt-5"
-                    data-aos="fade-down-left"
-                    >查看更多商品</a
-                  >
-                </router-link>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       <section class="container-fluid py-5 bg-light banner-two bg-skin ">
-        <div class="row">
+        <div class="row px-lg-5">
           <div
-            class="col-lg-5 bg-cover backimg-two "
+            class="col-12 col-lg-5 bg-cover backimg-two "
             data-aos="flip-left"
           ></div>
-        </div>
-        <div class="container">
-          <div class="row justify-content-end text-lg-dark ">
-            <div class="col-lg-7" data-aos="fade-up">
-              <h2>
-                知名影后 <strong class="text-danger">艾蜜兒</strong> 強力推薦
-              </h2>
-              <br />
-              <p class="text-justify">
-                知名電影影星艾蜜兒是 Slack的大客戶，長期使用 Slack的產品
-                ，艾蜜兒本身愛用之外，也推薦給家人朋友使用，Slack
-                的產品深受親朋好友的喜愛，艾蜜兒本人表示很注重保養跟養生，
-                本公司的產品天然無添加的配方，淡淡花草清香，深得艾蜜兒的心
-              </p>
 
-              <p>
-                即日期輸入艾蜜兒提供的優惠折扣碼，<strong class="text-danger"
-                  >即可享 88 折優惠</strong
+          <div class="col-12 col-lg-7 pt-5 px-sm-5" data-aos="fade-up">
+            <h2>
+              知名影后 <strong class="text-danger">艾蜜兒</strong> 強力推薦
+            </h2>
+            <br />
+            <p class="text-justify">
+              知名電影影星艾蜜兒是 Slack的大客戶，長期使用 Slack的產品
+              ，艾蜜兒本身愛用之外，也推薦給家人朋友使用，Slack
+              的產品深受親朋好友的喜愛，艾蜜兒本人表示很注重保養跟養生，
+              本公司的產品天然無添加的配方，淡淡花草清香，深得艾蜜兒的心
+            </p>
+
+            <p>
+              即日期輸入艾蜜兒提供的優惠折扣碼，<strong class="text-danger"
+                >即可享 88 折優惠</strong
+              >
+            </p>
+            <br />
+
+            <div class="text-right mt-5">
+              <router-link to="product">
+                <a
+                  href="#"
+                  class="btn btn-hover btn-info text-right"
+                  data-aos="flip-down"
+                  >查看更多商品</a
                 >
-              </p>
-              <br />
-
-              <div class="text-right mt-5">
-                <router-link to="product">
-                  <a
-                    href="#"
-                    class="btn btn-hover btn-info text-right"
-                    data-aos="flip-down"
-                    >查看更多商品</a
-                  >
-                </router-link>
-              </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -193,13 +186,13 @@
 </template>
 
 <script>
-import Header from "./Header";
-import Footer from "./Footer";
-import Swiper from "../../Swiper";
+import Header from "./Header"
+import Footer from "./Footer"
+import Swiper from "../../Swiper"
 
 export default {
   data() {
-    return {};
+    return {}
   },
   components: {
     Footer,
@@ -207,14 +200,13 @@ export default {
     Swiper,
   },
   created() {
-    document.title = "slack - 照顧你的每一寸肌膚";
+    document.title = "slack - 照顧你的每一寸肌膚"
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
 .banner-one {
-  position: relative;
   h2 {
     font-size: 36px;
   }
@@ -223,16 +215,15 @@ export default {
   }
 }
 .backimg-one {
-  position: absolute;
-  top: 0;
-  bottom: 0;
+  width: 500px;
+  height: 450px;
   background-image: url(../../../../src/assets/img/report/index1.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
+  background-position: center;
 }
 
 .banner-two {
-  position: relative;
   h2 {
     font-size: 36px;
   }
@@ -241,9 +232,8 @@ export default {
   }
 }
 .backimg-two {
-  position: absolute;
-  top: 0;
-  bottom: 0;
+  width: 500px;
+  height: 500px;
   background-image: url(../../../../src/assets/img/report/index2.jpg);
   background-repeat: no-repeat;
   background-position: center;

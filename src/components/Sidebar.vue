@@ -93,8 +93,6 @@
 <style lang="scss" scoped>
 .list-group {
   margin-top: 110px;
-  display: flex;
-  justify-content: center;
   li {
     width: 85vw;
   }

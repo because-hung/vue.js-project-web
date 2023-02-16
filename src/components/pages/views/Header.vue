@@ -64,7 +64,7 @@
             <router-link to="/login">
               <div class="btn btn-outline-primary  dashbtn">
                 <i class="fas fa-user-circle "></i>
-                會員登入
+                後台管理登入
               </div>
             </router-link></b-dropdown-item
           >
@@ -88,7 +88,7 @@
           <router-link to="/login">
             <div class="btn btn-outline-primary  navbtn ">
               <i class="fas fa-user-circle "></i>
-              會員登入
+              後台管理登入
             </div>
           </router-link>
         </li>
